@@ -3,7 +3,7 @@
 <head>
 
     <title>TradeBay</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./CSS/home.css">
 </head>
 <body>
     <section class="first-section">
