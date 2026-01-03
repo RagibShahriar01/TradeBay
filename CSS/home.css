@@ -1,69 +1,86 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
-.first-section{
+body {
+    margin: 0;
+    padding: 0 40px;
+}
+
+.first-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    font-size: 14px;
 }
 
-.a-container{
+.a-container {
     margin-left: 15px;
     display: flex;
     gap: 50px;
     align-items: center;
 }
 
-.first-container a{
+.first-container a {
     color: blue;
     text-decoration: none;
 }
 
-.dropdown{
+.dropdown {
     border: none;
     outline: none;
     cursor: pointer;
 }
 
-.second-container{
+.second-container {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.second-container a{
+.second-container a {
     color: black;
     text-decoration: none;
 }
 
-.list-container{
+
+
+
+.list-container>div {
     display: flex;
-    gap: 15px;
+    gap: 12px;
     align-items: center;
 }
 
-.list-container img{
+
+.list-container {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.list-container img {
     width: 22px;
     height: 22px;
     cursor: pointer;
 }
-.list-container a{
+
+.list-container a {
     text-decoration: none;
 }
 
-.second-section{
+.second-section {
     display: flex;
     align-items: center;
     gap: 30px;
     padding: 15px 20px;
 }
 
-.logo-container a{
+.logo-container a {
     font-size: 30px;
     font-weight: bold;
     text-decoration: none;
@@ -71,14 +88,15 @@
     align-items: center;
 }
 
-.search-bar{
+
+.search-bar {
     display: flex;
     align-items: center;
     gap: 15px;
-    flex: 1; 
+    flex: 1;
 }
 
-.search-input{
+.search-input {
     flex: 1;
     display: flex;
     align-items: center;
@@ -87,25 +105,26 @@
     padding: 10px 15px;
 }
 
-.search-icon{
+.search-icon {
     margin-right: 8px;
     color: gray;
 }
 
-.search-input input{
+.search-input input {
     border: none;
     outline: none;
     width: 100%;
     font-size: 16px;
 }
 
-.search-category{
+.search-category {
     border: none;
     font-size: 15px;
     cursor: pointer;
-    
+
 }
-.search-btn{
+
+.search-btn {
     background: #0a66ff;
     color: white;
     font-weight: bold;
@@ -114,71 +133,85 @@
     border-radius: 30px;
     cursor: pointer;
 }
-.search-btn:hover{
+
+.search-btn:hover {
     background: #004ecc;
 }
 
-.category-bar{
-    margin-top: 30px;
-    margin: 0 20px;
+.category-bar {
+    margin: 10px 20px 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 30px;
     align-items: center;
+    padding-right: 50px;
 }
-.category-bar a{
+
+
+
+.category-bar a {
     color: gray;
     text-decoration: none;
-    justify-content: space-between; 
+    justify-content: space-between;
+    font-size: 14px;
     font-weight: bold;
 }
 
 .third-section {
     width: 100%;
-    max-width: 1200px; 
-    margin: 0 auto;   
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .third-section img {
-      margin-top: 40px;
-    width: 100%;      
-    max-width: 100%;  
-    height: 400px;    
-    display: block;  
+    margin-top: 40px;
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+    display: block;
 }
 
 /* Fourth section */
-.fourth-section{
-    margin-top: 50px;
+.fourth-section {
+    margin: 50px 0;
+    /* vertical spacing only */
     border: 1px solid black;
     border-radius: 20px;
-    width: auto;
+    width: 100%;
     height: 170px;
     background-color: lightgray;
-    margin-left: 20px;
-    margin-right: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    /* internal spacing, not outer margins */
 }
-.shopping{
+
+
+.shopping {
     text-align: left;
     margin-left: 20px;
-    margin-top: 45px;
+    margin-top: 20px;
 }
-#p1{
-    font-size: 30px;
+
+#p1 {
+    font-size: 25px;
     font-weight: bold;
 }
-#p2{
+
+#p2 {
     font-size: 15px;
     font-weight: lighter;
     font-style: italic;
 }
-.fourth-container{
+
+.fourth-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
 }
-.search-btn1{
-   background: black;
+
+.search-btn1 {
+    background: black;
     color: white;
     font-weight: bold;
     border: none;
@@ -187,48 +220,232 @@
     cursor: pointer;
     margin-top: 30px;
 }
-.search-btn1:hover{
-    background:  lightblue;
+
+.search-btn1:hover {
+    background: lightblue;
 }
 
-.fifth-section{
+.fifth-section {
     margin-top: 50px;
-    
+
 }
-#p3{
+
+#p3 {
     font-size: 30px;
     font-weight: bold;
 }
 
 /* fifth section */
-.fifth-section{
+.fifth-section {
     margin-top: 50px;
-    margin-left: 20px;
-    padding: 0 20px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#p3{
-    font-size: 30px;
+
+#p3 {
+    font-size: 25px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-.fifth-section > div{
+.fifth-section>div {
     display: flex;
-    gap: 50px;
+    gap: 65px;
 }
-.fifth-section > div > div{
+
+.fifth-section>div>div {
     text-align: center;
 }
-.fifth-section img{
+
+.fifth-section img {
     width: 150px;
     height: 150px;
     background: white;
 }
-.fifth-section a{
+
+.fifth-section a {
     display: block;
     margin-top: 10px;
     color: black;
     text-decoration: none;
+    font-size: 15px;
     font-weight: bold;
+}
+
+
+#p4 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+.sixth-section>div {
+    display: flex;
+    gap: 65px;
+}
+
+.sixth-section>div>div {
+    text-align: center;
+}
+
+.sixth-section img {
+    width: 150px;
+    height: 150px;
+    background: white;
+}
+
+.sixth-section a {
+    display: block;
+    margin-top: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+
+/* Banner section: match width of the fourth-section (Shopping made easy box) */
+.banner-section {
+    margin: 50px 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.banner-container {
+    width: 100%;
+    /* full width inside body padding — matches .fourth-section */
+    margin: 0 auto;
+    border-radius: 20px;
+    /* optional: same rounding as fourth-section */
+    overflow: hidden;
+    box-sizing: border-box;
+    /* no background, no padding — keeps the image edge-to-edge inside the container */
+}
+
+.banner-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 0;
+    /* image itself has square corners inside the rounded container */
+}
+
+
+
+
+
+
+/* Footer */
+.site-footer {
+    margin-left: -40px;
+    margin-right: -40px;
+    background: transparent;
+    /* same as page background */
+    color: #000;
+    box-sizing: border-box;
+    padding: 40px 0 18px;
+    font-family: inherit;
+    border-top: 1px solid #7f7f7f;
+
+    /* full-width grey line */
+}
+
+/* inner container */
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+    align-items: start;
+}
+
+/* column headings */
+.footer-col h4 {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    letter-spacing: 0.6px;
+}
+
+/* lists */
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list li {
+    margin: 10px 0;
+}
+
+.footer-list a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* socials */
+.socials {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.socials img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* small CTAs */
+.small-ctas {
+    margin: 10px 0;
+}
+
+.small-cta {
+    font-size: 13px;
+    font-weight: 800;
+    margin: 6px 0;
+}
+
+/* payments */
+.payments {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-top: 10px;
+}
+
+.payments img {
+    width: 80px;
+    height: 55px;
+
+    object-fit: contain;
+    background: #fff;
+    padding: 8px;
+    /* slightly more padding */
+    border-radius: 8px;
+}
+
+
+/* bottom copyright */
+.footer-bottom {
+    margin-top: 22px;
+    padding-top: 14px;
+    border-top: 1px solid #7f7f7f;
+    /* visible grey line */
+}
+
+.footer-bottom small {
+    font-size: 13px;
+    opacity: 0.85;
 }

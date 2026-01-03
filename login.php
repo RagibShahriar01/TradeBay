@@ -15,10 +15,10 @@
         <div class="login-card">
             <h3>User Login</h3>
 
-            <label><b>E-mail Address:</b></label>
+            <label><b>E-mail Address</b></label>
             <input type="email" placeholder="your email" required>
 
-            <label><b>Password:</b></label>
+            <label><b>Password</b></label>
             <input type="password" placeholder="your password" required>
 
             <button>LOG IN</button>

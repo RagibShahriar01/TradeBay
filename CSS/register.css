@@ -5,6 +5,13 @@
     font-family: Arial, sans-serif;
 }
 
+body {
+    margin: 0;
+    padding: 0 40px;
+
+}
+
+/* logo */
 .logo-container {
     font-size: 30px;
     font-weight: bold;
@@ -18,18 +25,23 @@
     text-decoration: none;
 }
 
-/* form container */
+
+
+/* Replace the existing .form-container rule with this */
 .form-container {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: -50px;
+    /* was 40px — smaller = moved up */
 }
+
 
 .login-card {
     width: 400px;
     background: white;
     padding: 30px;
     border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .login-card h3 {
@@ -47,7 +59,10 @@
     margin-bottom: 6px;
 }
 
-.login-card input {
+.login-card input[type="text"],
+.login-card input[type="email"],
+.login-card input[type="tel"],
+.login-card input[type="password"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -55,6 +70,24 @@
     font-size: 14px;
     margin-bottom: 15px;
     background: #f9f9f9;
+}
+
+
+
+/* Gender radio row */
+.gender-row {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.radio-label {
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .login-card button {
@@ -66,17 +99,24 @@
     font-size: 16px;
     cursor: pointer;
     border-radius: 20px;
+    margin-top: 6px;
 }
 
 .login-card button:hover {
     background: #005fa3;
 }
 
+/* Links row (reuse style from login page, override for register centering) */
 .links {
     margin-top: 15px;
     font-size: 14px;
     display: flex;
     justify-content: space-between;
+}
+
+.register-links {
+    justify-content: center;
+    gap: 8px;
 }
 
 .links a {
