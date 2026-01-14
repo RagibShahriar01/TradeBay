@@ -182,7 +182,7 @@
 
 <section class="banner-section">
   <div class="banner-container">
-    <img src="./images/banner.png" alt="Promo banner">
+    <img src="../Images/banner.png" alt="Promo banner">
   </div>
 </section>
 
