@@ -27,12 +27,12 @@ body {
 
 
 
-/* Replace the existing .form-container rule with this */
+
 .form-container {
     display: flex;
     justify-content: center;
     margin-top: -50px;
-    /* was 40px — smaller = moved up */
+
 }
 
 
@@ -41,7 +41,7 @@ body {
     background: white;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
 }
 
 .login-card h3 {
@@ -106,7 +106,7 @@ body {
     background: #005fa3;
 }
 
-/* Links row (reuse style from login page, override for register centering) */
+/* Links row */
 .links {
     margin-top: 15px;
     font-size: 14px;

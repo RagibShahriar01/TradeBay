@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <title>Register</title>
-    <link rel="stylesheet" href="./CSS/register.css">
+    <link rel="stylesheet" href="../Css/register.css">
+
 </head>
 <body>
     <div class="logo-container">

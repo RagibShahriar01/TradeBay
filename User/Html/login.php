@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="./CSS/login.css">
+    <link rel="stylesheet" href="../Css/login.css">
+
 </head>
 <body>
     <div class="logo-container">

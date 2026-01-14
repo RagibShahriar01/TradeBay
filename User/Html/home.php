@@ -3,7 +3,7 @@
 <head>
 
     <title>TradeBay</title>
-    <link rel="stylesheet" href="./CSS/home.css">
+    <link rel="stylesheet" href="../Css/home.css">
 </head>
 <body>
     <section class="first-section">
@@ -34,10 +34,10 @@
        </div>
        <div>
          <a href="">
-            <img src="./images/first.png" alt="">
+            <img src="../Images/first.png" alt="">
         </a>
         <a href="">
-            <img src="./images/second.png" alt="">
+            <img src="../Images/second.png" alt="">
         </a>
        </div>
     </div>
@@ -88,7 +88,7 @@
     </div>
 
     <div class="third-section">
-        <img src="./images/fourth.jpg" alt="">
+        <img src="../Images/fourth.jpg" alt="">
     </div>
 
     <section class="fourth-section">
@@ -108,31 +108,31 @@
         <p id="p3">The future in your hands</p>
         <div>
             <div>
-                <a href=""><img src="./images/test.png" alt=""></a>
+                <a href=""><img src="../Images/test.png" alt=""></a>
                 <a href="">Laptops</a>
             </div>
             <div>
-                <a href=""><img src="./images/test1.png" alt=""></a>
+                <a href=""><img src="../Images/test1.png" alt=""></a>
                 <a href="">Computer Parts</a>
             </div>
             <div>
-                <a href=""><img src="./images/test2.png" alt=""></a>
+                <a href=""><img src="../Images/test2.png" alt=""></a>
                 <a href="">Smartphones</a>
             </div>
             <div>
-                <a href=""><img src="./images/test3.png" alt=""></a>
+                <a href=""><img src="../Images/test3.png" alt=""></a>
                 <a href="">Enterprise Networking</a>
             </div>
             <div>
-                <a href=""><img src="./images/test4.png" alt=""></a>
+                <a href=""><img src="../Images/test4.png" alt=""></a>
                 <a href="">Tablets & eBooks</a>
             </div>
             <div>
-                <a href=""><img src="./images/test5.png" alt=""></a>
+                <a href=""><img src="../Images/test5.png" alt=""></a>
                 <a href="">Storage & blank Media</a>
             </div>
             <div>
-                <a href=""><img src="./images/test6.png" alt=""></a>
+                <a href=""><img src="../Images/test6.png" alt=""></a>
                 <a href="">Lenses & filters</a>
             </div>
             
@@ -146,31 +146,31 @@
         <p id="p4">Explore TradeBay</p>
         <div>
             <div>
-                <a href=""><img src="./images/test7.png" alt=""></a>
+                <a href=""><img src="../Images/test7.png" alt=""></a>
                 <a href="">Tech</a>
             </div>
             <div>
-                <a href=""><img src="./images/test8.png" alt=""></a>
+                <a href=""><img src="../Images/test8.png" alt=""></a>
                 <a href="">Motors</a>
             </div>
             <div>
-                <a href=""><img src="./images/test9.png" alt=""></a>
+                <a href=""><img src="../Images/test9.png" alt=""></a>
                 <a href="">Luxary</a>
             </div>
             <div>
-                <a href=""><img src="./images/test10.png" alt=""></a>
+                <a href=""><img src="../Images/test10.png" alt=""></a>
                 <a href="">Collectibles & Art</a>
             </div>
             <div>
-                <a href=""><img src="./images/test11.png" alt=""></a>
+                <a href=""><img src="../Images/test11.png" alt=""></a>
                 <a href="">Home & Garden</a>
             </div>
             <div>
-                <a href=""><img src="./images/test12.png" alt=""></a>
+                <a href=""><img src="../Images/test12.png" alt=""></a>
                 <a href="">Manga</a>
             </div>
             <div>
-                <a href=""><img src="./images/test13.png" alt=""></a>
+                <a href=""><img src="../Images/test13.png" alt=""></a>
                 <a href="">Health & Beauty</a>
             </div>
             
@@ -225,10 +225,10 @@
       <h4>FOLLOW US!</h4>
 
       <div class="socials">
-        <a href="#"><img src="./images/instagram.png" alt="Instagram"></a>
-        <a href="#"><img src="./images/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="./images/twitter.png" alt="Twitter"></a>
-        <a href="#"><img src="./images/youtube.png" alt="YouTube"></a>
+        <a href="#"><img src="../Images/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="../Images/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="../Images/twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="../Images/youtube.png" alt="YouTube"></a>
       </div>
 
       <div class="small-ctas">
@@ -237,12 +237,12 @@
       </div>
 
       <div class="payments">
-        <img src="./images/bkash.png" alt="bKash">
-        <img src="./images/rocket.png" alt="Rocket">
-        <img src="./images/nagad.png" alt="Nagad">
-        <img src="./images/visa.png" alt="Visa">
-        <img src="./images/mastercard.png" alt="Mastercard">
-        <img src="./images/amex.png" alt="Amex">
+        <img src="../Images/bkash.png" alt="bKash">
+        <img src="../Images/rocket.png" alt="Rocket">
+        <img src="../Images/nagad.png" alt="Nagad">
+        <img src="../Images/visa.png" alt="Visa">
+        <img src="../Images/mastercard.png" alt="Mastercard">
+        <img src="../Images/amex.png" alt="Amex">
       </div>
     </div>
   </div>

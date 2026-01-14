@@ -174,7 +174,6 @@ body {
 /* Fourth section */
 .fourth-section {
     margin: 50px 0;
-    /* vertical spacing only */
     border: 1px solid black;
     border-radius: 20px;
     width: 100%;
@@ -182,7 +181,7 @@ body {
     background-color: lightgray;
     box-sizing: border-box;
     padding: 20px;
-    /* internal spacing, not outer margins */
+
 }
 
 
@@ -307,7 +306,7 @@ body {
 
 
 
-/* Banner section: match width of the fourth-section (Shopping made easy box) */
+
 .banner-section {
     margin: 50px 0;
     padding: 0;
@@ -316,13 +315,10 @@ body {
 
 .banner-container {
     width: 100%;
-    /* full width inside body padding — matches .fourth-section */
     margin: 0 auto;
     border-radius: 20px;
-    /* optional: same rounding as fourth-section */
     overflow: hidden;
     box-sizing: border-box;
-    /* no background, no padding — keeps the image edge-to-edge inside the container */
 }
 
 .banner-container img {
@@ -331,7 +327,6 @@ body {
     display: block;
     object-fit: cover;
     border-radius: 0;
-    /* image itself has square corners inside the rounded container */
 }
 
 
@@ -344,14 +339,12 @@ body {
     margin-left: -40px;
     margin-right: -40px;
     background: transparent;
-    /* same as page background */
     color: #000;
     box-sizing: border-box;
     padding: 40px 0 18px;
     font-family: inherit;
     border-top: 1px solid #7f7f7f;
 
-    /* full-width grey line */
 }
 
 /* inner container */
@@ -428,11 +421,9 @@ body {
 .payments img {
     width: 80px;
     height: 55px;
-
     object-fit: contain;
     background: #fff;
     padding: 8px;
-    /* slightly more padding */
     border-radius: 8px;
 }
 

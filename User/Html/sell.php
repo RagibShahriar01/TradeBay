@@ -3,7 +3,8 @@
 <head>
 
     <title>TradeBay</title>
-    <link rel="stylesheet" href="./CSS/sell.css">
+    <link rel="stylesheet" href="../Css/sell.css">
+
 </head>
 <body>
     <section class="first-section">
@@ -34,10 +35,10 @@
        </div>
        <div>
          <a href="">
-            <img src="./images/first.png" alt="">
+            <img src="../Images/first.png" alt="">
         </a>
         <a href="">
-            <img src="./images/second.png" alt="">
+            <img src="../Images/second.png" alt="">
         </a>
        </div>
     </div>
@@ -101,9 +102,9 @@
     </div>
 
     <div class="sell-right">
-        <img src="./images/shoe1.jpeg" alt="">
-        <img src="./images/shoe2.jpeg" alt="">
-        <img src="./images/watch.jpeg" alt="">
+        <img src="../Images/shoe1.jpeg" alt="">
+        <img src="../Images/shoe2.jpeg" alt="">
+        <img src="../Images/watch.jpeg" alt="">
     </div>
 </section>
 
@@ -150,7 +151,7 @@
     </div>
 
     <div class="business-right">
-        <img src="./images/business-selling.png" alt="">
+        <img src="../Images/business-selling.png" alt="">
     </div>
 </section>
 
@@ -213,7 +214,7 @@
 <!-- footer image -->
  <section class="footer-hero">
   <div class="footer-hero-bg">
-    <img src="./images/woman.jpeg" alt="Selling banner">
+    <img src="../Images/woman.jpeg" alt="Selling banner">
   </div>
 
   <div class="footer-card">
