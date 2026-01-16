@@ -255,8 +255,11 @@
     </div>
 </footer>
 
+
  <script src="../Js/userdashboard.js"></script>
 
+
+<script src="../js/userdashboard.js"></script>
 
 </body>
 </html>
