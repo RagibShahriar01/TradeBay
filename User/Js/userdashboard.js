@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ---------- Tabs Switching ----------
+    //  Tabs Switching
     const tabs = document.querySelectorAll('.tab-btn');
     const contents = document.querySelectorAll('.tab-content');
 
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // ---------- Password Form Toggle ----------
+    //  Password Form Toggle 
     const showBtn = document.getElementById("showPasswordForm");
     const cancelBtn = document.getElementById("cancelPassword");
     const passwordForm = document.getElementById("passwordForm");
@@ -35,13 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ---------- Account Information Edit Button ----------
+    //  Account Information Edit Button 
     const editBtn = document.getElementById("editAccountBtn");
     const inputs = document.querySelectorAll("#account input, #account select");
 
     if (editBtn) {
         editBtn.addEventListener("click", () => {
-            const isDisabled = inputs[0].disabled; // check first input status
+            const isDisabled = inputs[0].disabled; 
 
             // Toggle inputs
             inputs.forEach(input => input.disabled = !input.disabled);
@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
             // Toggle button text
             editBtn.textContent = isDisabled ? "Save" : "Edit";
 
-            // Optional: if saving, you can add AJAX or form submit logic here
         });
     }
 

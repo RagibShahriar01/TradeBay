@@ -108,22 +108,22 @@
             <div class="info-grid">
                 <div class="info-item">
                     <label>Your Name</label>
-                    <input type="text" value="">
+                    <input type="text" value="" disabled>
                 </div>
 
                 <div class="info-item">
                     <label>Email Address</label>
-                    <input type="email" value="">
+                    <input type="email" value="" disabled>
                 </div>
 
                 <div class="info-item">
                     <label>Mobile Number</label>
-                    <input type="text" value="">
+                    <input type="text" value="" disabled>
                 </div>
 
                 <div class="info-item">
                     <label>Gender</label>
-                    <select>
+                    <select disabled>
                         <option>Select</option>
                         <option>Male</option>
                         <option>Female</option>
@@ -255,64 +255,7 @@
     </div>
 </footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-   
-    // ---------- Tabs Switching ----------
-    const tabs = document.querySelectorAll('.tab-btn');
-    const contents = document.querySelectorAll('.tab-content');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            
-            tabs.forEach(t => t.classList.remove('active'));
-            contents.forEach(c => c.classList.remove('active'));
-
-            tab.classList.add('active');
-            const target = tab.getAttribute('data-target');
-            document.getElementById(target).classList.add('active');
-        });
-    });
-
-    // ---------- Password Form Toggle ----------
-    const showBtn = document.getElementById("showPasswordForm");
-    const cancelBtn = document.getElementById("cancelPassword");
-    const passwordForm = document.getElementById("passwordForm");
-
-    if (showBtn && passwordForm) {
-        showBtn.addEventListener("click", () => {
-            passwordForm.classList.add("show");
-            showBtn.style.display = "none";
-        });
-    }
-
-    if (cancelBtn) {
-        cancelBtn.addEventListener("click", () => {
-            passwordForm.classList.remove("show");
-            showBtn.style.display = "block";
-        });
-    }
-
-    // ---------- Account Information Edit Button ----------
-    const editBtn = document.getElementById("editAccountBtn");
-    const inputs = document.querySelectorAll("#account input, #account select");
-
-    if(editBtn){
-        editBtn.addEventListener("click", () => {
-            const isDisabled = inputs[0].disabled; // check first input status
-
-            // Toggle inputs
-            inputs.forEach(input => input.disabled = !input.disabled);
-
-            // Toggle button text
-            editBtn.textContent = isDisabled ? "Save" : "Edit";
-
-            // Optional: if saving, you can add AJAX or form submit logic here
-        });
-    }
-
-});
-</script>
+ <script src="../Js/userdashboard.js"></script>
 
 
 </body>
