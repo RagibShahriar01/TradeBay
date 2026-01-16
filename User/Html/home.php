@@ -9,7 +9,7 @@
     <section class="first-section">
         <div class="a-container">
         <div class="first-container">
-        Hi buddy! <a href="">Login</a> or <a href="">Register</a>
+       Hi buddy! <a href="login.php">Login</a> or <a href="register.php">Register</a>
         </div>
 
         <div class="second-container">
@@ -17,7 +17,7 @@
             <a href="">Help & Contact</a>
         </div>
         <div class="second-container">
-        <a href="">Sell</a>
+        <a href="sell.php">Sell</a>
     </div>
     </div>
 
@@ -27,10 +27,11 @@
             <option>Watchlist</option>
         </select>
        </div>
-       <div>
-        <select class="dropdown">
-            <option>My TradeBay</option>
-        </select>
+       
+       <div class="dropdown">
+        <a href="userdashboard.php">My TradeBay</a>
+         <a href="../Php/logout.php">Logout</a>
+
        </div>
        <div>
          <a href="">
