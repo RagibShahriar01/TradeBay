@@ -1,0 +1,26 @@
+/* uses your checkout page layout style */
+@import url("./checkout.css");
+
+.msg {
+    color: red;
+}
+
+#preview {
+    display: none;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.note-text {
+    font-size: 14px;
+    color: gray;
+    line-height: 1.6;
+}
+
+.sales-link {
+    text-decoration: none;
+}

@@ -1,3 +1,5 @@
+<?php include "../php/auth_guard.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,7 +89,10 @@
         <a href="">FAQ</a>
         <a href="">My TradeBay</a>
 
-        <button type="submit" class="search-btn">List an item</button>
+        <a href="listitem.php" style="text-decoration:none;">
+        <button type="button" class="search-btn">List an item</button>
+        </a>
+
     </div>
 </section>
 
@@ -98,7 +103,11 @@
             Cash in on your pre-loved pieces – millions of<br>
             buyers are waiting.
         </p>
-        <button class="sell-btn">Sell now</button>
+
+       <a href="listitem.php" style="text-decoration:none;">
+       <button type="button" class="sell-btn">Sell now</button>
+       </a>
+
     </div>
 
     <div class="sell-right">
@@ -219,7 +228,11 @@
 
   <div class="footer-card">
     <h2>You’ve got this.<br>We’ve got your back.</h2>
-    <button class="footer-btn">List an item</button>
+
+    <a href="listitem.php" style="text-decoration:none;">
+    <button type="button" class="footer-btn">List an item</button>
+    </a>
+
   </div>
 </section>
 

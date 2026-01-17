@@ -161,40 +161,58 @@ unset($_SESSION["tb_list_msg"]);
 
             </div>
           </form>
-
           
 
         </div>
 
-        <!-- ================= ORDER TAB (YOUR DUMMY) ================= -->
-        <div class="tab-content" id="orders">
-            <h2>Order History</h2>
+       
+        <!-- ================= ORDERS TAB (CONNECTED TO DB) ================= -->
 
-            <table class="order-table">
-                <thead>
-                    <tr>
-                        <th>Order ID</th>
-                        <th>Date</th>
-                        <th>Status</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>#7901</td>
-                        <td>14 Jan 2026</td>
-                        <td>Completed</td>
-                        <td>3010 taka</td>
-                    </tr>
-                    <tr>
-                        <td>#7892</td>
-                        <td>02 Jan 2026</td>
-                        <td>Pending</td>
-                        <td>1250 taka</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+
+<?php
+$orders = $conn->query("
+  SELECT oi.*, o.id AS order_id, o.created_at, o.status AS order_status
+  FROM order_items oi
+  JOIN orders o ON o.id = oi.order_id
+  WHERE o.user_id = $uid
+  ORDER BY o.id DESC, oi.id DESC
+");
+?>
+
+<div class="sales-table-wrap">
+  <table class="sales-table">
+    <tr>
+      <th>Image</th>
+      <th>Product</th>
+      <th>Order</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Total</th>
+    </tr>
+
+    <?php if($orders && $orders->num_rows>0){ ?>
+      <?php while($r=$orders->fetch_assoc()){ ?>
+        <tr>
+          <td><img class="sales-img" src="../<?php echo htmlspecialchars($r["image_path"]); ?>" alt=""></td>
+          <td><?php echo htmlspecialchars($r["product_name"]); ?> * <?php echo (int)$r["qty"]; ?></td>
+          <td>#<?php echo (int)$r["order_id"]; ?></td>
+          <td><?php echo htmlspecialchars($r["created_at"]); ?></td>
+          <td><?php echo htmlspecialchars($r["status"]); ?></td>
+          <td><?php echo number_format((float)$r["price"]*(int)$r["qty"],2); ?> taka</td>
+        </tr>
+      <?php } ?>
+    <?php } else { ?>
+      <tr><td colspan="6" class="sales-empty">No orders yet.</td></tr>
+    <?php } ?>
+  </table>
+</div>
+
+
+
+        
+
+
+        
 
         <!-- ================= SALES TAB (CONNECTED TO DB) ================= -->
         <div class="tab-content" id="sales">

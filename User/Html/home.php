@@ -1,3 +1,18 @@
+<?php
+session_start();
+include "../db/config.php";
+
+// all approved products
+$products = $conn->query("
+  SELECT l.id, l.product_name, l.price, l.image_path, l.category_id
+  FROM listings l
+  WHERE l.status='approved'
+  ORDER BY l.created_at DESC
+");
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,7 +93,7 @@
 
     <hr>
     <div class="category-bar">
-      <a href="">Electronic</a>
+      <a href="category.php?id=1">Electronic</a>
       <a href="">Motors</a>
       <a href="">Fashion</a>
       <a href="">Collectibles & Art</a>
@@ -88,108 +103,36 @@
       <a href="">Home & Garden</a>
     </div>
 
-    <div class="third-section">
-        <img src="../Images/fourth.jpg" alt="">
-    </div>
-
-    <section class="fourth-section">
-      <div class="fourth-container">
-        <div class="shopping">
-        <p id="p1">Shopping made easy</p>
-        <br>
-        <p id="p2">Enjoy reliability, secure deliveries and hassle-free returns</p>
-      </div>
-      <div>
-        <button type="submit" class="search-btn1">Start Now</button>
-      </div>
-      </div>
-    </section>
-
-    <section class="fifth-section">
-        <p id="p3">The future in your hands</p>
-        <div>
-            <div>
-                <a href=""><img src="../Images/test.png" alt=""></a>
-                <a href="">Laptops</a>
-            </div>
-            <div>
-                <a href=""><img src="../Images/test1.png" alt=""></a>
-                <a href="">Computer Parts</a>
-            </div>
-            <div>
-                <a href=""><img src="../Images/test2.png" alt=""></a>
-                <a href="">Smartphones</a>
-            </div>
-            <div>
-                <a href=""><img src="../Images/test3.png" alt=""></a>
-                <a href="">Enterprise Networking</a>
-            </div>
-            <div>
-                <a href=""><img src="../Images/test4.png" alt=""></a>
-                <a href="">Tablets & eBooks</a>
-            </div>
-            <div>
-                <a href=""><img src="../Images/test5.png" alt=""></a>
-                <a href="">Storage & blank Media</a>
-            </div>
-            <div>
-                <a href=""><img src="../Images/test6.png" alt=""></a>
-                <a href="">Lenses & filters</a>
-            </div>
-            
-        </div>
-    </section>
-
-<br> <br><br><br>
 
 
-     <section class="sixth-section">
-        <p id="p4">Explore TradeBay</p>
-        <div>
-            <div>
-                <a href=""><img src="../Images/test7.png" alt=""></a>
-                <a href="">Tech</a>
-            </div>
-            <div>
-                <a href=""><img src="../Images/test8.png" alt=""></a>
-                <a href="">Motors</a>
-            </div>
-            <div>
-                <a href=""><img src="../Images/test9.png" alt=""></a>
-                <a href="">Luxary</a>
-            </div>
-            <div>
-                <a href=""><img src="../Images/test10.png" alt=""></a>
-                <a href="">Collectibles & Art</a>
-            </div>
-            <div>
-                <a href=""><img src="../Images/test11.png" alt=""></a>
-                <a href="">Home & Garden</a>
-            </div>
-            <div>
-                <a href=""><img src="../Images/test12.png" alt=""></a>
-                <a href="">Manga</a>
-            </div>
-            <div>
-                <a href=""><img src="../Images/test13.png" alt=""></a>
-                <a href="">Health & Beauty</a>
-            </div>
-            
-        </div>
-    </section>
 
+    
+<section class="all-products">
+  <h2 class="all-products-title">All Products</h2><br><br>
 
-<br><br>
-
-<section class="banner-section">
-  <div class="banner-container">
-    <img src="../Images/banner.png" alt="Promo banner">
+  <div class="product-grid">
+    <?php if($products && $products->num_rows > 0){ ?>
+      <?php while($p = $products->fetch_assoc()){ ?>
+        <a class="product-card" href="product.php?id=<?php echo (int)$p["id"]; ?>">
+          <div class="product-img-wrap">
+            <img src="../<?php echo htmlspecialchars($p["image_path"]); ?>" alt="">
+          </div>
+          <div class="product-meta">
+            <p class="product-name"><?php echo htmlspecialchars($p["product_name"]); ?></p>
+            <p class="product-price"><?php echo number_format((float)$p["price"],2); ?> Taka</p>
+          </div>
+        </a>
+      <?php } ?>
+    <?php } else { ?>
+      <p style="margin:20px 0;color:gray;">No approved products yet.</p>
+    <?php } ?>
   </div>
 </section>
 
 
 
 
+<br><br>
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-col">

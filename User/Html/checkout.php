@@ -1,252 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <title>TradeBay</title>
-    <link rel="stylesheet" href="../Css/checkout.css">
+  <title>TradeBay</title>
+  <link rel="stylesheet" href="../Css/checkout.css">
 </head>
 <body>
-    <section class="first-section">
-        <div class="a-container">
-        <div class="first-container">
-        Hi buddy! <a href="">Login</a> or <a href="">Register</a>
-        </div>
 
-        <div class="second-container">
-            
-            <a href="">Help & Contact</a>
-        </div>
-        <div class="second-container">
-        <a href="">Sell</a>
-    </div>
-    </div>
+<!-- ✅ keep your header same -->
 
-    <div class="list-container">
-        <div>
-        <select class="dropdown">
-            <option>Watchlist</option>
-        </select>
-       </div>
-       <div>
-        <select class="dropdown">
-            <option>My TradeBay</option>
-        </select>
-       </div>
-       <div>
-         <a href="">
-            <img src="../Images/first.png" alt="">
-        </a>
-        <a href="">
-            <img src="../Images/second.png" alt="">
-        </a>
-       </div>
-    </div>
-    </section>
+<h1 class="checkout-title">Checkout</h1>
 
-    <hr>
-
-    <section class="second-section">
-        <div class="logo-container">
-            <a href="">
-            <span style="color: blue;">T</span>
-            <span style="color: green;">r</span>
-            <span style="color: red;">a</span>
-            <span style="color: blue;">d</span>
-            <span style="color: red;">e</span>
-            <span style="color: green;">B</span>
-            <span style="color: blue;">a</span>
-            <span style="color: orange;">y</span>
-            </a>
-        </div>
-         <form class="search-bar">
-        <div class="search-input">
-            <span class="search-icon">🔍</span>
-            <input type="text" placeholder="Search for anything">
-        </div>
-
-        <select class="search-category">
-            <option>All Categories</option>
-            <option>Electronics</option>
-            <option>Fashion</option>
-            <option>Books</option>
-        </select>
-
-        <button type="submit" class="search-btn">Search</button>
-    </form>
-    </section>
-
-    <hr>
-    <div class="category-bar">
-      <a href="">Electronic</a>
-      <a href="">Motors</a>
-      <a href="">Fashion</a>
-      <a href="">Collectibles & Art</a>
-      <a href="">Sports</a>
-      <a href="">Healthy & Beauty</a>
-      <a href="">Industrial equipment</a>
-      <a href="">Home & Garden</a>
-    </div>
-
-    <h1 class="checkout-title">Checkout</h1>
-
+<form method="post" action="../php/orderplaces.php<?php echo $buyId>0 ? "?buy_id=".$buyId : ""; ?>">
 <section class="checkout-wrapper">
 
-  <!-- LEFT : Billing -->
   <div class="checkout-left">
     <h2>Billing Details</h2>
-
     <br><br>
 
     <div class="row">
-      <input type="text" placeholder="First Name *">
-      <input type="text" placeholder="Last Name *">
+      <input type="text" name="first_name" placeholder="First Name *"
+             value="<?php echo htmlspecialchars($firstName); ?>" required>
+
+      <input type="text" name="last_name" placeholder="Last Name *"
+             value="<?php echo htmlspecialchars($lastName); ?>" required>
     </div>
 
-    <input type="text" placeholder="Phone *">
-    <input type="email" placeholder="Email Address *">
-    <input type="text" placeholder="Full shipping address *">
+    <input type="text" name="phone" placeholder="Phone *"
+           value="<?php echo htmlspecialchars($user["phone"]); ?>" required>
+
+    <input type="email" name="email" placeholder="Email Address *"
+           value="<?php echo htmlspecialchars($user["email"]); ?>" required>
+
+    <input type="text" name="address" placeholder="Full shipping address *" required>
 
     <div class="row">
-      <input type="text" placeholder="City *">
-      <select>
-        <option>Dhaka</option>
-        <option>Chattogram</option>
+      <input type="text" name="city" placeholder="City *" required>
+      <select name="area" required>
+        <option value="">Select</option>
+        <option value="Dhaka">Dhaka</option>
+        <option value="Chattogram">Chattogram</option>
       </select>
     </div>
 
-    <input type="text" placeholder="Postcode (optional)">
-
-    <textarea placeholder="Order notes (optional)"></textarea>
+    <input type="text" name="postcode" placeholder="Postcode (optional)">
+    <textarea name="notes" placeholder="Order notes (optional)"></textarea>
   </div>
 
-  <!-- RIGHT : Order + Payment -->
   <div class="checkout-right">
 
-    <!-- Order Summary -->
     <div class="box">
       <h2>Your Order</h2>
 
-      <div class="order-row">
-        <span>Mijia Desk Lamp 2 Lite * 1</span>
-        <strong>2,950taka</strong>
-      </div>
+      <?php if(empty($items)){ ?>
+        <div class="order-row">
+          <span>No items to checkout.</span>
+          <strong>0 taka</strong>
+        </div>
+      <?php } else { ?>
+        <?php foreach($items as $it){ ?>
+          <div class="order-row">
+            <span><?php echo htmlspecialchars($it["name"]); ?> * <?php echo (int)$it["qty"]; ?></span>
+            <strong><?php echo number_format($it["price"]*$it["qty"],2); ?> taka</strong>
+          </div>
+        <?php } ?>
+      <?php } ?>
 
       <div class="order-row">
         <span>Shipping</span>
-        <strong>60taka</strong>
+        <strong><?php echo number_format($shipping,2); ?> taka</strong>
       </div>
 
       <hr>
 
       <div class="order-row total">
         <span>Total</span>
-        <strong>3,010taka</strong>
+        <strong><?php echo number_format($total,2); ?> taka</strong>
       </div>
     </div>
 
-    <!-- Payment Method -->
     <div class="box">
       <h2>Payment Method</h2>
 
       <label class="payment-option">
-        <input type="radio" name="payment" checked>
+        <input type="radio" name="payment_method" value="bkash" required>
         <span>bKash</span>
       </label>
 
       <label class="payment-option">
-        <input type="radio" name="payment">
+        <input type="radio" name="payment_method" value="cod" required>
         <span>Cash on Delivery</span>
       </label>
 
       <div class="box">
+        <div class="bkash-box">
+          <p class="bkash-text">
+            Pay with bKash Personal Number <strong>01XXXXXXXXX</strong>
+            and enter your payment details below.
+          </p>
 
-  <!-- bKash Details -->
-  <div class="bkash-box">
+          <input type="text" name="bkash_no" placeholder="bKash Number">
+          <input type="text" name="bkash_trx" placeholder="bKash Transaction ID">
+        </div>
+      </div>
 
-    <p class="bkash-text">
-      Pay with bKash Personal Number <strong>01XXXXXXXXX</strong>  
-      and enter your payment details below.
-    </p>
-
-    <input type="text" placeholder="bKash Number">
-    <input type="text" placeholder="bKash Transaction ID">
-
-   </div>
-
-  </div>
-
-
-      <button class="place-order">Place Order</button>
+      <button class="place-order" type="submit" name="place_order">Place Order</button>
     </div>
 
   </div>
 
 </section>
+</form>
 
-  <footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-col">
-      <h4>TradeBay LTD.</h4>
-      <ul class="footer-list">
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms Of Use</a></li>
-        <li><a href="#">Limited Warranty</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>CUSTOMER CARE</h4>
-      <ul class="footer-list">
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">Purchase Process</a></li>
-        <li><a href="tel:+8801709995757">+8801709995757</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>CUSTOMER INFORMATION</h4>
-      <ul class="footer-list">
-        <li><a href="#">Returns & Exchanges</a></li>
-        <li><a href="#">Shipping Information</a></li>
-        <li><a href="#">Offers & Promotions</a></li>
-        <li><a href="#">Size Charts</a></li>
-        <li><a href="#">Gift Voucher</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>FOLLOW US!</h4>
-
-      <div class="socials">
-        <a href="#"><img src="../Images/instagram.png" alt="Instagram"></a>
-        <a href="#"><img src="../Images/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="../Images/twitter.png" alt="Twitter"></a>
-        <a href="#"><img src="../Images/youtube.png" alt="YouTube"></a>
-      </div>
-
-      <div class="small-ctas">
-        <p class="small-cta">SIGN UP FOR SMS</p>
-        <p class="small-cta">FIND OUR SHOP</p>
-      </div>
-
-      <div class="payments">
-        <img src="../Images/bkash.png" alt="bKash">
-        <img src="../Images/rocket.png" alt="Rocket">
-        <img src="../Images/nagad.png" alt="Nagad">
-        <img src="../Images/visa.png" alt="Visa">
-        <img src="../Images/mastercard.png" alt="Mastercard">
-        <img src="../Images/amex.png" alt="Amex">
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <div class="footer-inner">
-      <small>© 2026 <span id="year"></span>TradeBay Ltd. All rights reserved.</small>
-    </div>
-  </div>
-</footer>
+<!-- ✅ keep your footer same -->
 
 </body>
 </html>

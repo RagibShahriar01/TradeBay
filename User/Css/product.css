@@ -1,0 +1,136 @@
+/* Product page layout (no inline CSS) */
+
+.product-page {
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 25px;
+}
+
+/* ✅ keep both containers same size */
+.product-left,
+.product-right {
+    flex: 1;
+    width: auto;
+    border-radius: 14px;
+    background: #fff;
+}
+
+
+
+/* make left (image) narrower and right (details) wider */
+.product-left {
+    flex: 0 0 40%;
+}
+
+.product-right {
+    flex: 0 0 60%;
+}
+
+
+/* ✅ Image container 30% smaller (420px -> 294px) */
+.product-left {
+    overflow: hidden;
+    height: 294px;
+}
+
+/* ✅ image fits inside nicely */
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #fff;
+    display: block;
+}
+
+/* ✅ Text container 20% smaller */
+.product-right {
+    padding: 14px;
+    /* was 18px */
+}
+
+.product-title {
+    font-size: 20px;
+    /* was 22px */
+    margin-bottom: 15px;
+    /* was 10px */
+}
+
+.product-cat {
+    color: gray;
+    margin-bottom: 15px;
+    /* was 10px */
+    font-size: 15px;
+    /* added smaller text */
+}
+
+.product-price {
+    font-size: 16px;
+    /* was 20px */
+    font-weight: 800;
+    color: #0a66ff;
+    margin-bottom: 11px;
+    /* was 14px */
+}
+
+.product-desc {
+    font-size: 15px;
+    /* was 14px */
+    line-height: 1.5;
+    /* slightly tighter */
+    color: #333;
+    margin-bottom: 14px;
+    /* was 18px */
+}
+
+.product-btn {
+    width: 20%;
+
+    margin: 8px;
+    /* ✅ center + keep bottom gap */
+    font-size: 13px;
+    padding: 10px 14px;
+    display: block;
+
+    /* ✅ required so margin auto works */
+}
+
+
+.buy-link {
+    text-decoration: none;
+    display: block;
+}
+
+.buy-now-btn {
+    background: #111;
+}
+
+.cart-msg {
+    margin-top: 8px;
+    /* was 10px */
+    color: green;
+    font-size: 12px;
+    /* was 14px */
+}
+
+/* responsive */
+@media (max-width: 950px) {
+    .product-page {
+        flex-direction: column;
+    }
+
+    .product-left,
+    .product-right {
+        width: 100%;
+    }
+
+    /* 30% smaller than 320px -> 224px */
+    .product-left {
+        height: 224px;
+    }
+
+    .product-img {
+        height: 100%;
+    }
+}

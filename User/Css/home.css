@@ -160,177 +160,154 @@ body {
     font-weight: bold;
 }
 
-.third-section {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.third-section img {
-    margin-top: 40px;
-    width: 100%;
-    max-width: 100%;
-    height: 400px;
-    display: block;
-}
-
-/* Fourth section */
-.fourth-section {
-    margin: 50px 0;
-    border: 1px solid black;
-    border-radius: 20px;
-    width: 100%;
-    height: 170px;
-    background-color: lightgray;
-    box-sizing: border-box;
-    padding: 20px;
-
-}
 
 
-.shopping {
-    text-align: left;
-    margin-left: 20px;
-    margin-top: 20px;
-}
-
-#p1 {
-    font-size: 25px;
-    font-weight: bold;
-}
-
-#p2 {
-    font-size: 15px;
-    font-weight: lighter;
-    font-style: italic;
-}
-
-.fourth-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-.search-btn1 {
-    background: black;
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 12px 26px;
-    border-radius: 30px;
-    cursor: pointer;
-    margin-top: 30px;
-}
-
-.search-btn1:hover {
-    background: lightblue;
-}
-
-.fifth-section {
-    margin-top: 50px;
-
-}
-
-#p3 {
-    font-size: 30px;
-    font-weight: bold;
-}
-
-/* fifth section */
-.fifth-section {
-    margin-top: 50px;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 
-#p3 {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
 
-.fifth-section>div {
-    display: flex;
-    gap: 65px;
-}
 
-.fifth-section>div>div {
+/* ================= ALL PRODUCTS (Like your screenshot) ================= */
+
+.all-products {
+    max-width: 1300px;
+    margin: 55px auto 0;
+    padding: 0 20px;
     text-align: center;
 }
 
-.fifth-section img {
-    width: 150px;
-    height: 150px;
-    background: white;
+.all-products-title {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 8px;
 }
 
-.fifth-section a {
+/* Subtitle line under "All Products" (no HTML change needed) */
+.all-products-title::after {
+    content: "Check & Get Your Desired Product!";
     display: block;
+    font-size: 16px;
+    font-weight: 500;
     margin-top: 10px;
-    color: black;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
+    color: #0a2f6b;
 }
 
-
-#p4 {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 20px;
+/* grid exactly 4 cards per row like screenshot */
+.product-grid {
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 34px;
+    align-items: stretch;
 }
 
-
-.sixth-section>div {
+/* card look */
+.product-card {
     display: flex;
-    gap: 65px;
-}
-
-.sixth-section>div>div {
-    text-align: center;
-}
-
-.sixth-section img {
-    width: 150px;
-    height: 150px;
-    background: white;
-}
-
-.sixth-section a {
-    display: block;
-    margin-top: 10px;
-    color: black;
+    flex-direction: column;
     text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
-}
+    color: inherit;
 
-
-
-
-.banner-section {
-    margin: 50px 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.banner-container {
-    width: 100%;
-    margin: 0 auto;
-    border-radius: 20px;
+    border: 1px solid #0a2057;
+    border-radius: 16px;
+    background: #fff;
     overflow: hidden;
-    box-sizing: border-box;
+    padding-bottom: 18px;
+
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.banner-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    border-radius: 0;
+.product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
+
+/* inner image box (like screenshot) */
+.product-img-wrap {
+    height: 270px;
+    margin: 18px 18px 0;
+
+    border-radius: 14px;
+    background: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+}
+
+.product-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* ✅ gives white space like screenshot */
+    display: block;
+}
+
+/* meta area */
+.product-meta {
+    padding: 18px 18px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    flex: 1;
+
+}
+
+.product-name {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.25;
+
+    /* allow wrapping (screenshot has multiline) */
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+
+    /* keeps card height consistent */
+    min-height: 56px;
+    margin: 0;
+}
+
+/* Price like screenshot: black "Price:" + red amount */
+.product-price {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    color: #e10600;
+    /* red amount */
+}
+
+.product-price::before {
+    content: "Price: ";
+    color: #111;
+    font-weight: bold;
+}
+
+
+
+/* responsive */
+@media (max-width: 1100px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
 
 
 

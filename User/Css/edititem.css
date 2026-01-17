@@ -1,0 +1,151 @@
+/* ---------- Base ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0 40px;
+    background: #fff;
+    color: #000;
+}
+
+/* ---------- Title ---------- */
+.checkout-title {
+    text-align: center;
+    font-size: 40px;
+    margin: 35px 0 20px;
+    font-weight: 800;
+}
+
+/* ---------- Wrapper ---------- */
+.checkout-wrapper {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.checkout-left {
+    flex: 1.25;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    padding: 22px;
+}
+
+.checkout-right {
+    flex: 0.75;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    padding: 22px;
+}
+
+.checkout-left h2,
+.checkout-right h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* ---------- Message ---------- */
+.msg {
+    color: red;
+    margin: 8px 0 10px;
+    font-size: 14px;
+}
+
+/* ---------- Image ---------- */
+.current-photo {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid #ddd;
+}
+
+/* ---------- Form elements ---------- */
+.checkout-left label {
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #333;
+}
+
+.checkout-left input,
+.checkout-left select,
+.checkout-left textarea {
+    width: 100%;
+    padding: 12px 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+}
+
+.checkout-left textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.checkout-left input:focus,
+.checkout-left select:focus,
+.checkout-left textarea:focus {
+    border-color: #0a66ff;
+}
+
+/* ---------- Button ---------- */
+.place-order {
+    width: 100%;
+    margin-top: 18px;
+    background: #0a66ff;
+    color: #fff;
+    font-weight: 800;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.place-order:hover {
+    background: #004ecc;
+}
+
+/* ---------- Right note + link ---------- */
+.note-text {
+    font-size: 14px;
+    color: gray;
+    line-height: 1.6;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #0a66ff;
+    font-weight: 700;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    body {
+        padding: 0 18px;
+    }
+
+    .checkout-wrapper {
+        flex-direction: column;
+    }
+
+    .checkout-title {
+        font-size: 32px;
+    }
+}

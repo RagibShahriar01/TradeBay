@@ -2,12 +2,12 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require __DIR__ . "/PHPMailer/Exception.php";
-require __DIR__ . "/PHPMailer/PHPMailer.php";
-require __DIR__ . "/PHPMailer/SMTP.php";
+// ✅ NO composer / vendor
+require_once __DIR__ . "/PHPMailer/Exception.php";
+require_once __DIR__ . "/PHPMailer/PHPMailer.php";
+require_once __DIR__ . "/PHPMailer/SMTP.php";
 
-function tb_send_mail($to, $toName, $subject, $body){
-
+function tb_send_mail($toEmail, $toName, $subject, $htmlBody){
     $mail = new PHPMailer(true);
 
     try {
@@ -15,22 +15,24 @@ function tb_send_mail($to, $toName, $subject, $body){
         $mail->Host       = "smtp.gmail.com";
         $mail->SMTPAuth   = true;
 
-        // ✅ Put your Gmail + App Password here
+        // ✅ sender gmail
         $mail->Username   = "itachiuchiha01635241@gmail.com";
+
+        // ✅ app password (16 digit) - keep as-is for now
         $mail->Password   = "zfgy ppnx jgmh xaij";
 
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
-        $mail->setFrom($mail->Username, "TradeBayOTP");
-        $mail->addAddress($to, $toName);
+        $mail->setFrom("itachiuchiha01635241@gmail.com", "TradeBayOTP");
+        $mail->addAddress($toEmail, $toName);
 
         $mail->isHTML(true);
         $mail->Subject = $subject;
-        $mail->Body    = $body;
+        $mail->Body    = $htmlBody;
 
-        $mail->send();
-        return true;
+        // ✅ IMPORTANT: actually send
+        return $mail->send();
 
     } catch (Exception $e) {
         return false;
