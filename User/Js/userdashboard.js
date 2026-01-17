@@ -1,54 +1,73 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    //  Tabs Switching
-    const tabs = document.querySelectorAll('.tab-btn');
-    const contents = document.querySelectorAll('.tab-content');
+    // ================= TAB SWITCHING (JS ONLY) =================
+    const tabs = document.querySelectorAll(".tab-btn");
+    const contents = document.querySelectorAll(".tab-content");
+
+    function resetAccountEditMode() {
+        const editBtn = document.getElementById("editAccountBtn");
+        const saveBtn = document.getElementById("saveAccountBtn");
+
+        const nameInput = document.getElementById("nameInput");
+        const phoneInput = document.getElementById("phoneInput");
+        const emailInput = document.getElementById("emailInput");
+        const genderInput = document.getElementById("genderInput");
+
+        if (nameInput) nameInput.disabled = true;
+        if (phoneInput) phoneInput.disabled = true;
+
+        // extra safety
+        if (emailInput) emailInput.disabled = true;
+        if (genderInput) genderInput.disabled = true;
+
+        if (editBtn) editBtn.classList.remove("save-hidden");
+        if (saveBtn) saveBtn.classList.add("save-hidden");
+    }
 
     tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
+        tab.addEventListener("click", () => {
+            tabs.forEach(t => t.classList.remove("active"));
+            contents.forEach(c => c.classList.remove("active"));
 
-            tabs.forEach(t => t.classList.remove('active'));
-            contents.forEach(c => c.classList.remove('active'));
+            tab.classList.add("active");
+            const target = tab.getAttribute("data-target");
+            document.getElementById(target).classList.add("active");
 
-            tab.classList.add('active');
-            const target = tab.getAttribute('data-target');
-            document.getElementById(target).classList.add('active');
+            // if user leaves account tab, lock it again
+            if (target !== "account") {
+                resetAccountEditMode();
+            }
         });
     });
 
-    //  Password Form Toggle 
-    const showBtn = document.getElementById("showPasswordForm");
-    const cancelBtn = document.getElementById("cancelPassword");
-    const passwordForm = document.getElementById("passwordForm");
 
-    if (showBtn && passwordForm) {
-        showBtn.addEventListener("click", () => {
-            passwordForm.classList.add("show");
-            showBtn.style.display = "none";
-        });
-    }
-
-    if (cancelBtn) {
-        cancelBtn.addEventListener("click", () => {
-            passwordForm.classList.remove("show");
-            showBtn.style.display = "block";
-        });
-    }
-
-    //  Account Information Edit Button 
+    // ================= ACCOUNT EDIT/SAVE TOGGLE (JS ONLY) =================
     const editBtn = document.getElementById("editAccountBtn");
-    const inputs = document.querySelectorAll("#account input, #account select");
+    const saveBtn = document.getElementById("saveAccountBtn");
 
-    if (editBtn) {
+    const nameInput = document.getElementById("nameInput");
+    const phoneInput = document.getElementById("phoneInput");
+
+    // must stay locked always
+    const emailInput = document.getElementById("emailInput");
+    const genderInput = document.getElementById("genderInput");
+
+    if (editBtn && saveBtn && nameInput && phoneInput) {
         editBtn.addEventListener("click", () => {
-            const isDisabled = inputs[0].disabled; 
 
-            // Toggle inputs
-            inputs.forEach(input => input.disabled = !input.disabled);
+            // enable only name + phone
+            nameInput.disabled = false;
+            phoneInput.disabled = false;
 
-            // Toggle button text
-            editBtn.textContent = isDisabled ? "Save" : "Edit";
+            // force lock
+            if (emailInput) emailInput.disabled = true;
+            if (genderInput) genderInput.disabled = true;
 
+            // show save button, hide edit
+            editBtn.classList.add("save-hidden");
+            saveBtn.classList.remove("save-hidden");
+
+            nameInput.focus();
         });
     }
 

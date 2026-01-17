@@ -285,88 +285,7 @@ select:disabled {
     font-size: 14px;
 }
 
-/* ================= CHANGE PASSWORD ================= */
-.change-password {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
 
-.change-btn {
-    padding: 8px 18px;
-    background: #0073e6;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.change-btn:hover {
-    background-color: #45a049;
-}
-
-input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-}
-
-/* Password popup */
-.password-form {
-    display: none;
-    margin-top: 15px;
-    padding: 15px;
-    background: #fafafa;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-}
-
-.password-form.show {
-    display: block;
-    animation: slideDown 0.3s ease;
-}
-
-.password-form input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    margin-bottom: 10px;
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.btn-group {
-    display: flex;
-    gap: 10px;
-}
-
-.save-btn {
-    background: #0a66ff;
-    color: #fff;
-    border: none;
-    padding: 10px 22px;
-    border-radius: 25px;
-    cursor: pointer;
-}
-
-.cancel-btn {
-    background: #ccc;
-    border: none;
-    padding: 10px 22px;
-    border-radius: 25px;
-    cursor: pointer;
-}
 
 /* ================= ORDER TABLE ================= */
 .order-table {
@@ -467,4 +386,102 @@ input[type="checkbox"] {
 .footer-bottom small {
     font-size: 13px;
     opacity: 0.85;
+}
+
+
+
+/* ================= SALES HISTORY (Dashboard Table Like Old Page) ================= */
+
+.sales-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.sales-msg {
+    color: green;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.sales-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    /* ✅ makes columns stay in one row */
+}
+
+.sales-table th,
+.sales-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-size: 14px;
+    vertical-align: top;
+    word-wrap: break-word;
+}
+
+.sales-table th {
+    background: #f2f2f2;
+}
+
+/* ✅ smaller image like your old saleshistory.php */
+.sales-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+/* ✅ keep product text from making row too tall */
+.sales-table td:nth-child(2),
+.sales-table td:nth-child(5) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* rejection reason */
+.reject-reason {
+    color: red;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+/* edit link */
+.edit-link {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+
+.edit-link:hover {
+    text-decoration: underline;
+}
+
+.sales-empty {
+    text-align: center;
+    padding: 16px;
+    color: gray;
+}
+
+.list-another {
+    margin-top: 15px;
+}
+
+.list-another a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+
+
+.save-hidden {
+    display: none;
+}
+
+.profile-msg {
+    color: green;
+    margin-bottom: 10px;
+    font-size: 14px;
 }

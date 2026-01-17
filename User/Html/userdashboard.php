@@ -1,3 +1,23 @@
+<?php
+include "../php/auth_guard.php";
+include "../db/config.php";
+
+$uid = (int)$_SESSION["user_id"];
+
+// fetch user info (for Account Information tab)
+$u = $conn->query("SELECT name,email,phone,gender FROM users WHERE id=$uid LIMIT 1");
+$user = ($u && $u->num_rows > 0) ? $u->fetch_assoc() : ["name"=>"", "email"=>"", "phone"=>"", "gender"=>""];
+
+// fetch sales history rows (for Sales History tab)
+$salesRows = $conn->query("SELECT l.*, c.name AS cat_name
+                           FROM listings l
+                           JOIN categories c ON c.id = l.category_id
+                           WHERE l.user_id = $uid
+                           ORDER BY l.created_at DESC");
+
+$salesMsg = $_SESSION["tb_list_msg"] ?? "";
+unset($_SESSION["tb_list_msg"]);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +31,7 @@
 <section class="first-section">
     <div class="a-container">
         <div class="first-container">
-            Hi buddy! <a href="">Login</a> or <a href="">Register</a>
+            Hi buddy!
         </div>
 
         <div class="second-container">
@@ -19,7 +39,7 @@
         </div>
 
         <div class="second-container">
-            <a href="">Sell</a>
+            <a href="sell.php">Sell</a>
         </div>
     </div>
 
@@ -45,7 +65,7 @@
 
 <section class="second-section">
     <div class="logo-container">
-        <a href="">
+        <a href="home.php">
             <span style="color: blue;">T</span>
             <span style="color: green;">r</span>
             <span style="color: red;">a</span>
@@ -98,64 +118,55 @@
 
     <div class="dashboard-content">
 
+        <!-- ================= ACCOUNT TAB ================= -->
         <div class="tab-content active" id="account">
-           <h2 class="account-header">
-    Account Information
-    <button type="button" id="editAccountBtn" class="edit-btn">Edit</button>
-    </h2>
 
-            
+          <form method="post" action="../php/updateprofiles.php" class="account-form" id="accountForm">
+            <h2 class="account-header">
+              Account Information
+              <button type="button" id="editAccountBtn" class="edit-btn">Edit</button>
+              <button type="submit" id="saveAccountBtn" class="edit-btn save-hidden" name="save_profile">Save</button>
+            </h2>
+
+            <?php if(isset($_SESSION["tb_profile_msg"])) { ?>
+              <p class="profile-msg"><?php echo htmlspecialchars($_SESSION["tb_profile_msg"]); ?></p>
+              <?php unset($_SESSION["tb_profile_msg"]); ?>
+            <?php } ?>
+
             <div class="info-grid">
-                <div class="info-item">
-                    <label>Your Name</label>
-                    <input type="text" value="" disabled>
-                </div>
 
-                <div class="info-item">
-                    <label>Email Address</label>
-                    <input type="email" value="" disabled>
-                </div>
+              <!-- ✅ Editable -->
+              <div class="info-item">
+                <label>Your Name</label>
+                <input id="nameInput" type="text" name="name" value="<?php echo htmlspecialchars($user["name"]); ?>" disabled>
+              </div>
 
-                <div class="info-item">
-                    <label>Mobile Number</label>
-                    <input type="text" value="" disabled>
-                </div>
+              <!-- ❌ Fixed -->
+              <div class="info-item">
+                <label>Email Address</label>
+                <input id="emailInput" type="email" value="<?php echo htmlspecialchars($user["email"]); ?>" disabled>
+              </div>
 
-                <div class="info-item">
-                    <label>Gender</label>
-                    <select disabled>
-                        <option>Select</option>
-                        <option>Male</option>
-                        <option>Female</option>
-                    </select>
-                </div>
+              <!-- ✅ Editable -->
+              <div class="info-item">
+                <label>Mobile Number</label>
+                <input id="phoneInput" type="text" name="phone" value="<?php echo htmlspecialchars($user["phone"]); ?>" disabled>
+              </div>
+
+              <!-- ❌ Fixed -->
+              <div class="info-item">
+                <label>Gender</label>
+                <input id="genderInput" type="text" value="<?php echo htmlspecialchars($user["gender"]); ?>" disabled>
+              </div>
+
             </div>
+          </form>
 
-            <div class="change-password">
-                <button type="button" class="change-btn" id="showPasswordForm">
-         Change Password
-          </button>
-
-                <div class="password-form" id="passwordForm">
-                    <input type="password" placeholder="Current Password">
-                    <input type="password" placeholder="New Password">
-                    <input type="password" placeholder="Confirm New Password">
-
-                    <div class="btn-group">
-
-         <button type="submit" name="save" class="save-btn">
-          Save Changes
-        </button>
-
-    <button type="button" class="cancel-btn" id="cancelPassword">
-        Cancel
-    </button>
-</div>
-                </div>
           
-            </div>
+
         </div>
 
+        <!-- ================= ORDER TAB (YOUR DUMMY) ================= -->
         <div class="tab-content" id="orders">
             <h2>Order History</h2>
 
@@ -185,9 +196,66 @@
             </table>
         </div>
 
+        <!-- ================= SALES TAB (CONNECTED TO DB) ================= -->
         <div class="tab-content" id="sales">
             <h2>Sales History</h2>
-            <p>You haven't sold any products yet.</p>
+
+            <?php if($salesMsg != ""){ ?>
+              <p class="sales-msg"><?php echo htmlspecialchars($salesMsg); ?></p>
+            <?php } ?>
+
+            <div class="sales-table-wrap">
+              <table class="sales-table">
+                  <tr>
+                      <th>Image</th>
+                      <th>Product</th>
+                      <th>Category</th>
+                      <th>Price</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                  </tr>
+
+                  <?php if($salesRows && $salesRows->num_rows > 0){ ?>
+                      <?php while($r = $salesRows->fetch_assoc()){ ?>
+                          <tr>
+                              <td>
+                                  <img class="sales-img" src="../<?php echo $r["image_path"]; ?>" alt="">
+                              </td>
+
+                              <td><?php echo htmlspecialchars($r["product_name"]); ?></td>
+                              <td><?php echo htmlspecialchars($r["cat_name"]); ?></td>
+                              <td><?php echo number_format((float)$r["price"], 2); ?> taka</td>
+
+                              <td>
+                                  <?php echo htmlspecialchars($r["status"]); ?>
+
+                                  <?php if($r["status"]==="rejected" && !empty($r["rejection_reason"])){ ?>
+                                      <div class="reject-reason">
+                                          Reason: <?php echo htmlspecialchars($r["rejection_reason"]); ?>
+                                      </div>
+                                  <?php } ?>
+                              </td>
+
+                              <td>
+                                  <?php if($r["status"] !== "approved"){ ?>
+                                      <a class="edit-link" href="edititem.php?id=<?php echo (int)$r["id"]; ?>">Edit</a>
+                                  <?php } else { ?>
+                                      -
+                                  <?php } ?>
+                              </td>
+                          </tr>
+                      <?php } ?>
+                  <?php } else { ?>
+                      <tr>
+                          <td colspan="6" class="sales-empty">You haven't sold any products yet.</td>
+                      </tr>
+                  <?php } ?>
+              </table>
+            </div>
+
+            <p class="list-another">
+                <a href="listitem.php">+ List another item</a>
+            </p>
         </div>
 
     </div>
@@ -255,11 +323,6 @@
     </div>
 </footer>
 
-
- <script src="../Js/userdashboard.js"></script>
-
-
-<script src="../js/userdashboard.js"></script>
-
+<script src="../Js/userdashboard.js"></script>
 </body>
 </html>
