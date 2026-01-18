@@ -18,6 +18,10 @@ $salesRows = $conn->query("SELECT l.*, c.name AS cat_name
 $salesMsg = $_SESSION["tb_list_msg"] ?? "";
 unset($_SESSION["tb_list_msg"]);
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -166,9 +170,7 @@ unset($_SESSION["tb_list_msg"]);
         </div>
 
        
-        <!-- ================= ORDERS TAB (CONNECTED TO DB) ================= -->
-
-
+       <!-- ================= ORDERS TAB (CONNECTED TO DB) ================= -->
 <?php
 $orders = $conn->query("
   SELECT oi.*, o.id AS order_id, o.created_at, o.status AS order_status
@@ -179,33 +181,42 @@ $orders = $conn->query("
 ");
 ?>
 
-<div class="sales-table-wrap">
-  <table class="sales-table">
-    <tr>
-      <th>Image</th>
-      <th>Product</th>
-      <th>Order</th>
-      <th>Date</th>
-      <th>Status</th>
-      <th>Total</th>
-    </tr>
+<div class="tab-content" id="orders">
+  <h2>Order History</h2>
 
-    <?php if($orders && $orders->num_rows>0){ ?>
-      <?php while($r=$orders->fetch_assoc()){ ?>
+  <div class="sales-table-wrap">
+    <table class="sales-table">
+      <tr>
+        <th>Image</th>
+        <th>Product</th>
+        <th>Order</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Total</th>
+      </tr>
+
+      <?php if($orders && $orders->num_rows > 0){ ?>
+        <?php while($r = $orders->fetch_assoc()){ ?>
+          <tr>
+            <td>
+              <img class="sales-img" src="../<?php echo htmlspecialchars($r["image_path"]); ?>" alt="">
+            </td>
+            <td><?php echo htmlspecialchars($r["product_name"]); ?> * <?php echo (int)$r["qty"]; ?></td>
+            <td>#<?php echo (int)$r["order_id"]; ?></td>
+            <td><?php echo htmlspecialchars($r["created_at"]); ?></td>
+            <td><?php echo htmlspecialchars($r["status"]); ?></td>
+            <td><?php echo number_format((float)$r["price"]*(int)$r["qty"], 2); ?> taka</td>
+          </tr>
+        <?php } ?>
+      <?php } else { ?>
         <tr>
-          <td><img class="sales-img" src="../<?php echo htmlspecialchars($r["image_path"]); ?>" alt=""></td>
-          <td><?php echo htmlspecialchars($r["product_name"]); ?> * <?php echo (int)$r["qty"]; ?></td>
-          <td>#<?php echo (int)$r["order_id"]; ?></td>
-          <td><?php echo htmlspecialchars($r["created_at"]); ?></td>
-          <td><?php echo htmlspecialchars($r["status"]); ?></td>
-          <td><?php echo number_format((float)$r["price"]*(int)$r["qty"],2); ?> taka</td>
+          <td colspan="6" class="sales-empty">No orders yet.</td>
         </tr>
       <?php } ?>
-    <?php } else { ?>
-      <tr><td colspan="6" class="sales-empty">No orders yet.</td></tr>
-    <?php } ?>
-  </table>
+    </table>
+  </div>
 </div>
+
 
 
 

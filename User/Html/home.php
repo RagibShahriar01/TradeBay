@@ -49,12 +49,10 @@ $products = $conn->query("
 
        </div>
        <div>
-         <a href="">
-            <img src="../Images/first.png" alt="">
-        </a>
-        <a href="">
-            <img src="../Images/second.png" alt="">
-        </a>
+         <a href=""><img src="../Images/first.png" alt=""></a>
+         
+        <a href="cart.php"><img src="../Images/second.png" alt="Cart"></a>
+
        </div>
     </div>
     </section>
@@ -74,21 +72,38 @@ $products = $conn->query("
             <span style="color: orange;">y</span>
             </a>
         </div>
-         <form class="search-bar">
-        <div class="search-input">
-            <span class="search-icon">🔍</span>
-            <input type="text" placeholder="Search for anything">
-        </div>
+        
 
-        <select class="search-category">
-            <option>All Categories</option>
-            <option>Electronics</option>
-            <option>Fashion</option>
-            <option>Books</option>
-        </select>
+         
 
-        <button type="submit" class="search-btn">Search</button>
-    </form>
+
+
+
+        <form class="search-bar" id="searchForm">
+  <div class="search-input">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Search products by name...">
+  </div>
+
+  <select class="search-category">
+    <option>All Categories</option>
+    <option>Electronics</option>
+    <option>Fashion</option>
+    <option>Books</option>
+  </select>
+
+  <button type="submit" class="search-btn">Search</button>
+</form>
+
+
+
+
+
+        
+
+
+
+
     </section>
 
     <hr>
@@ -110,7 +125,8 @@ $products = $conn->query("
 <section class="all-products">
   <h2 class="all-products-title">All Products</h2><br><br>
 
-  <div class="product-grid">
+ <div class="product-grid" id="productGrid">
+
     <?php if($products && $products->num_rows > 0){ ?>
       <?php while($p = $products->fetch_assoc()){ ?>
         <a class="product-card" href="product.php?id=<?php echo (int)$p["id"]; ?>">
@@ -199,6 +215,7 @@ $products = $conn->query("
 </footer>
 
 
+<script src="../Js/homesearch.js"></script>
 
 </body>
 </html>
