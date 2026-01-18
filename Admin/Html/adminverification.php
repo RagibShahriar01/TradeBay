@@ -2,7 +2,7 @@
 session_start();
 $pending = $_SESSION["tb_admin_reg_pending"] ?? null;
 if(!$pending){
-  header("Location: register.php");
+  header("Location: adminregister.php");
   exit;
 }
 $msg = $_SESSION["adm_verify_msg"] ?? "";

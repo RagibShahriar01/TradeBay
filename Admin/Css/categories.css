@@ -1,0 +1,38 @@
+.cat-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.msg {
+    color: green;
+    margin-bottom: 10px;
+}
+
+.cat-form {
+    margin-bottom: 20px;
+}
+
+.cat-input {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.cat-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.btn-delete {
+    padding: 8px 12px;
+    border: none;
+    background: #000;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.back-row {
+    margin-top: 14px;
+}
