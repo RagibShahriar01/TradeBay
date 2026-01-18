@@ -92,11 +92,8 @@ $products = $conn->query("
     <option>Books</option>
   </select>
 
-  <button type="submit" class="search-btn">Search</button>
+  
 </form>
-
-
-
 
 
         
@@ -108,14 +105,11 @@ $products = $conn->query("
 
     <hr>
     <div class="category-bar">
-      <a href="category.php?id=1">Electronic</a>
-      <a href="">Motors</a>
-      <a href="">Fashion</a>
-      <a href="">Collectibles & Art</a>
-      <a href="">Sports</a>
-      <a href="">Healthy & Beauty</a>
-      <a href="">Industrial equipment</a>
-      <a href="">Home & Garden</a>
+      <a href="category.php?id=8">Audio</a>
+      <a href="category.php?id=9">Battery & Power</a>
+      <a href="category.php?id=10">Desktop Accessories</a>
+      <a href="category.php?id=12">Gadgets</a>
+      <a href="category.php?id=11">Watches</a>
     </div>
 
 

@@ -33,30 +33,34 @@ if($otp_in !== $row["otp_code"] || $otp_in !== $otp_sess){
 }
 
 
-// Insert user
-$name = $conn->real_escape_string($pending["name"]);
-$phone = $conn->real_escape_string($pending["phone"]);
+// ✅ define these BEFORE insert
+$name   = $conn->real_escape_string($pending["name"]);
+$email = $conn->real_escape_string($pending["email"]);
+$phone  = $conn->real_escape_string($pending["phone"]);
 $gender = $conn->real_escape_string($pending["gender"]);
-$hash = password_hash($pending["pass"], PASSWORD_DEFAULT);
+$hash   = password_hash($pending["pass"], PASSWORD_DEFAULT);
 
+// Insert user
 $ins = $conn->query("INSERT INTO users(name,email,phone,gender,password_hash)
                      VALUES('$name','$email','$phone','$gender','$hash')");
+
 
 if(!$ins){
     $_SESSION["tb_user_verify_msg"] = "DB error: ".$conn->error;
     header("Location: ../html/verification.php"); exit;
 }
 
-$conn->query("UPDATE otp_requests SET is_used=1 WHERE id=".$row["id"]);
-
+// ✅ MUST take insert_id RIGHT NOW (before any UPDATE/SELECT)
 $user_id = $conn->insert_id;
+
+// now mark otp used
+$conn->query("UPDATE otp_requests SET is_used=1 WHERE id=".(int)$row["id"]);
 
 // auto login
 unset($_SESSION["tb_user_reg_pending"], $_SESSION["tb_user_reg_otp"]);
-$_SESSION["user_id"] = $user_id;
+$_SESSION["user_id"] = (int)$user_id;
 $_SESSION["user_email"] = $pending["email"];
-$_SESSION["user_name"] = $pending["name"];
+$_SESSION["user_name"]  = $pending["name"];
 
 header("Location: ../html/home.php");
 exit;
-?>

@@ -127,15 +127,6 @@ body {
 
 }
 
-.search-btn {
-    background: #0a66ff;
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 12px 26px;
-    border-radius: 30px;
-    cursor: pointer;
-}
 
 .search-btn:hover {
     background: #004ecc;
