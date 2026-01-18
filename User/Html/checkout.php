@@ -94,7 +94,7 @@
       <div class="box">
         <div class="bkash-box">
           <p class="bkash-text">
-            Pay with bKash Personal Number <strong>01XXXXXXXXX</strong>
+            Pay with bKash Personal Number <strong>01764288347</strong>
             and enter your payment details below.
           </p>
 

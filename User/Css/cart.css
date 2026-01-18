@@ -1,0 +1,83 @@
+.cart-wrap {
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* same as sales history */
+.sales-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.sales-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.sales-table th,
+.sales-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-size: 14px;
+    vertical-align: top;
+    word-wrap: break-word;
+}
+
+.sales-table th {
+    background: #f2f2f2;
+}
+
+.sales-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+
+.qty-text {
+    display: inline-block;
+    min-width: 24px;
+    /* adjust as needed */
+    text-align: center;
+    font-weight: 500;
+    padding: 4px 0;
+}
+
+
+
+
+/* remove button (reusing your style idea) */
+.btn-delete {
+    padding: 8px 12px;
+    border: none;
+    background: red;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.cart-actions {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.cart-checkout {
+    text-decoration: none;
+    background: #0a66ff;
+    color: white;
+    font-weight: bold;
+    padding: 10px 16px;
+    border-radius: 10px;
+}
