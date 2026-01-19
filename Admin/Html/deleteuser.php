@@ -10,8 +10,8 @@ unset($_SESSION["adm_user_msg"]);
 <html>
 <head>
   <title>Users</title>
-  <link rel="stylesheet" href="../../user/Css/checkout.css">
-  <link rel="stylesheet" href="../css/deleteusers.css">
+  
+  <link rel="stylesheet" href="../css/deleteuser.css">
 </head>
 <body>
 
