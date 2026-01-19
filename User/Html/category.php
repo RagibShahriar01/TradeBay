@@ -33,6 +33,19 @@ $products = $stmt->get_result();
 
 <!-- ✅ reuse your SAME header by copy/paste from home.php -->
 
+  <div class="logo-container">
+            <a href="http://localhost/TradeBay/User/Html/home.php">
+            <span style="color: blue;">T</span>
+            <span style="color: green;">r</span>
+            <span style="color: red;">a</span>
+            <span style="color: blue;">d</span>
+            <span style="color: red;">e</span>
+            <span style="color: green;">B</span>
+            <span style="color: blue;">a</span>
+            <span style="color: orange;">y</span>
+            </a>
+      </div>
+
 <div class="category-page-wrap" style="max-width:1200px;margin:35px auto;padding:0 20px;">
   <h2 style="font-size:22px;margin-bottom:18px;"><?php echo htmlspecialchars($catName); ?></h2>
 

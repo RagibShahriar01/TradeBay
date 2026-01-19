@@ -8,6 +8,19 @@
 
 <!-- ✅ keep your header same -->
 
+   <div class="logo-container">
+            <a href="http://localhost/TradeBay/User/Html/home.php">
+            <span style="color: blue;">T</span>
+            <span style="color: green;">r</span>
+            <span style="color: red;">a</span>
+            <span style="color: blue;">d</span>
+            <span style="color: red;">e</span>
+            <span style="color: green;">B</span>
+            <span style="color: blue;">a</span>
+            <span style="color: orange;">y</span>
+            </a>
+        </div>
+
 <h1 class="checkout-title">Checkout</h1>
 
 <form method="post" action="../php/orderplaces.php<?php echo $buyId>0 ? "?buy_id=".$buyId : ""; ?>">
