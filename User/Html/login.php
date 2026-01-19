@@ -17,7 +17,7 @@ unset($_SESSION["tb_login_msg"]);
 
 <body>
   <div class="logo-container">
-    <a href="#"><span style="color: blue;">T</span><span style="color: green;">r</span><span style="color: red;">a</span><span style="color: blue;">d</span><span style="color: red;">e</span><span style="color: green;">B</span><span style="color: blue;">a</span><span style="color: orange;">y</span></a>
+    <a href="http://localhost/TradeBay/User/Html/home.php"><span style="color: blue;">T</span><span style="color: green;">r</span><span style="color: red;">a</span><span style="color: blue;">d</span><span style="color: red;">e</span><span style="color: green;">B</span><span style="color: blue;">a</span><span style="color: orange;">y</span></a>
   </div>
 
   <div class="form-container">

@@ -17,7 +17,7 @@
 
     <section class="second-section">
         <div class="logo-container">
-            <a href="">
+            <a href="http://localhost/TradeBay/User/Html/home.php">
             <span style="color: blue;">T</span>
             <span style="color: green;">r</span>
             <span style="color: red;">a</span>
@@ -185,21 +185,7 @@
   </div>
 </section>
 
-<section class="footer">
-  <div class="footer-section">
-    <p>Selling on TradeBay</p>
-    Seller Center<br>
-    Sell for charity<br>
-    Business tools
-  </div>
-  <div class="footer-section">
-    <p>Support</p>
-    Customer Service<br>
-    Seller Policies<br>
-    Community
-</div>
-
-</section>
+<hr>
 
 <footer>
   

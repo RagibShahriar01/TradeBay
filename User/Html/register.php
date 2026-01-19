@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="logo-container">
-        <a href="">
+        <a href="http://localhost/TradeBay/User/Html/home.php">
             <span style="color: blue;">T</span><span style="color: green;">r</span><span style="color: red;">a</span><span style="color: blue;">d</span><span style="color: red;">e</span><span style="color: green;">B</span><span style="color: blue;">a</span><span style="color: orange;">y</span>
         </a>
     </div>
