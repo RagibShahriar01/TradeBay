@@ -116,11 +116,11 @@ $products = $conn->query("
 
     <hr>
     <div class="category-bar">
-      <a href="category.php?id=1">Audio</a>
-      <a href="category.php?id=2">Battery & Power</a>
-      <a href="category.php?id=3">Desktop Accessories</a>
-      <a href="category.php?id=4">Gadgets</a>
-      <a href="category.php?id=5">Watches</a>
+      <a href="category.php?id=8">Audio</a>
+      <a href="category.php?id=9">Battery & Power</a>
+      <a href="category.php?id=10">Desktop Accessories</a>
+      <a href="category.php?id=12">Gadgets</a>
+      <a href="category.php?id=11">Watches</a>
     </div>
 
 
