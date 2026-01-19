@@ -1,17 +1,16 @@
-/* wrapper like your old approved page */
 .approved-wrap {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* same msg style as sales history */
+
 .sales-msg {
     color: green;
     margin-bottom: 12px;
     font-size: 14px;
 }
 
-/* ================= SALES HISTORY TABLE STYLE (EXACT COPY) ================= */
+
 .sales-table-wrap {
     width: 100%;
     overflow-x: auto;
@@ -38,7 +37,7 @@
     background: #f2f2f2;
 }
 
-/* EXACT image style from sales history */
+
 .sales-img {
     width: 70px;
     height: 70px;
@@ -47,7 +46,7 @@
     display: block;
 }
 
-/* keep product + seller from making row too tall (same rule idea) */
+
 .sales-table td:nth-child(2),
 .sales-table td:nth-child(5) {
     overflow: hidden;

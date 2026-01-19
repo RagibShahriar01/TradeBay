@@ -127,3 +127,14 @@ body {
 .links a:hover {
     text-decoration: underline;
 }
+
+
+.form-error {
+    color: #d8000c;
+    background: #ffd2d2;
+    border: 1px solid #d8000c;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin: 10px 0 12px;
+}

@@ -88,12 +88,12 @@
     width: 20%;
 
     margin: 8px;
-    /* ✅ center + keep bottom gap */
+
     font-size: 13px;
     padding: 10px 14px;
     display: block;
 
-    /* ✅ required so margin auto works */
+
 }
 
 
@@ -102,9 +102,7 @@
     display: block;
 }
 
-.buy-now-btn {
-    background: gray;
-}
+
 
 .cart-msg {
     margin-top: 8px;

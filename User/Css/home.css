@@ -157,7 +157,7 @@ body {
 
 
 
-/* ================= ALL PRODUCTS (Like your screenshot) ================= */
+
 
 .all-products {
     max-width: 1300px;
@@ -172,7 +172,7 @@ body {
     margin-bottom: 8px;
 }
 
-/* Subtitle line under "All Products" (no HTML change needed) */
+
 .all-products-title::after {
     content: "Check & Get Your Desired Product!";
     display: block;
@@ -182,7 +182,7 @@ body {
     color: #0a2f6b;
 }
 
-/* grid exactly 4 cards per row like screenshot */
+
 .product-grid {
     margin-top: 45px;
     display: grid;
@@ -212,7 +212,7 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* inner image box (like screenshot) */
+/* inner image box */
 .product-img-wrap {
     height: 270px;
     margin: 18px 18px 0;
@@ -230,7 +230,6 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    /* ✅ gives white space like screenshot */
     display: block;
 }
 
@@ -251,7 +250,6 @@ body {
     text-align: center;
     line-height: 1.25;
 
-    /* allow wrapping (screenshot has multiline) */
     white-space: normal;
     overflow: visible;
     text-overflow: clip;
@@ -261,13 +259,13 @@ body {
     margin: 0;
 }
 
-/* Price like screenshot: black "Price:" + red amount */
+
 .product-price {
     font-size: 16px;
     font-weight: bold;
     margin: 0;
     color: #e10600;
-    /* red amount */
+
 }
 
 .product-price::before {
@@ -275,29 +273,6 @@ body {
     color: #111;
     font-weight: bold;
 }
-
-
-
-/* responsive */
-@media (max-width: 1100px) {
-    .product-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 800px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 520px) {
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-
 
 
 

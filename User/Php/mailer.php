@@ -2,7 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// ✅ NO composer / vendor
+// NO composer / vendor
 require_once __DIR__ . "/PHPMailer/Exception.php";
 require_once __DIR__ . "/PHPMailer/PHPMailer.php";
 require_once __DIR__ . "/PHPMailer/SMTP.php";
@@ -15,10 +15,10 @@ function tb_send_mail($toEmail, $toName, $subject, $htmlBody){
         $mail->Host       = "smtp.gmail.com";
         $mail->SMTPAuth   = true;
 
-        // ✅ sender gmail
+        // sender gmail
         $mail->Username   = "itachiuchiha01635241@gmail.com";
 
-        // ✅ app password (16 digit) - keep as-is for now
+        // app password (16 digit) 
         $mail->Password   = "zfgy ppnx jgmh xaij";
 
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
@@ -31,7 +31,7 @@ function tb_send_mail($toEmail, $toName, $subject, $htmlBody){
         $mail->Subject = $subject;
         $mail->Body    = $htmlBody;
 
-        // ✅ IMPORTANT: actually send
+        // actually send
         return $mail->send();
 
     } catch (Exception $e) {

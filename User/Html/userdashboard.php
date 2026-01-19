@@ -112,25 +112,25 @@ unset($_SESSION["tb_list_msg"]);
 
             <div class="info-grid">
 
-              <!-- ✅ Editable -->
+              
               <div class="info-item">
                 <label>Your Name</label>
                 <input id="nameInput" type="text" name="name" value="<?php echo htmlspecialchars($user["name"]); ?>" disabled>
               </div>
 
-              <!-- ❌ Fixed -->
+             
               <div class="info-item">
                 <label>Email Address</label>
                 <input id="emailInput" type="email" value="<?php echo htmlspecialchars($user["email"]); ?>" disabled>
               </div>
 
-              <!-- ✅ Editable -->
+             
               <div class="info-item">
                 <label>Mobile Number</label>
                 <input id="phoneInput" type="text" name="phone" value="<?php echo htmlspecialchars($user["phone"]); ?>" disabled>
               </div>
 
-              <!-- ❌ Fixed -->
+              
               <div class="info-item">
                 <label>Gender</label>
                 <input id="genderInput" type="text" value="<?php echo htmlspecialchars($user["gender"]); ?>" disabled>

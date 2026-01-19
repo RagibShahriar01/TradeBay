@@ -33,7 +33,7 @@ if($otp_in !== $row["otp_code"] || $otp_in !== $otp_sess){
 }
 
 
-// ✅ define these BEFORE insert
+// define these BEFORE insert
 $name   = $conn->real_escape_string($pending["name"]);
 $email = $conn->real_escape_string($pending["email"]);
 $phone  = $conn->real_escape_string($pending["phone"]);
@@ -50,7 +50,7 @@ if(!$ins){
     header("Location: ../html/verification.php"); exit;
 }
 
-// ✅ MUST take insert_id RIGHT NOW (before any UPDATE/SELECT)
+// ✅MUST take insert_id RIGHT NOW (before any UPDATE/SELECT)
 $user_id = $conn->insert_id;
 
 // now mark otp used

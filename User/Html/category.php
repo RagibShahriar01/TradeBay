@@ -31,7 +31,6 @@ $products = $stmt->get_result();
 </head>
 <body>
 
-<!-- ✅ reuse your SAME header by copy/paste from home.php -->
 
 <div class="category-page-wrap" style="max-width:1200px;margin:35px auto;padding:0 20px;">
   <h2 style="font-size:22px;margin-bottom:18px;"><?php echo htmlspecialchars($catName); ?></h2>
@@ -55,7 +54,6 @@ $products = $stmt->get_result();
   </div>
 </div>
 
-<!-- ✅ reuse your SAME footer -->
 
 </body>
 </html>

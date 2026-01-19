@@ -16,6 +16,19 @@
         <div class="login-card">
             <h3>Create Account</h3>
 
+
+
+            <?php
+             session_start();
+             if(isset($_SESSION["tb_user_reg_error"]) && $_SESSION["tb_user_reg_error"] !== ""){
+            ?>
+            <p class="form-error"><?php echo htmlspecialchars($_SESSION["tb_user_reg_error"]); ?></p>
+            <?php
+            unset($_SESSION["tb_user_reg_error"]);
+        }
+        ?>
+
+
            
             <form method="post" action="../php/registers.php">
 

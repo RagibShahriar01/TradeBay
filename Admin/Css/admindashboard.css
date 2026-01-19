@@ -1,5 +1,3 @@
-/* Admin Dashboard - Tabs + Layout (no header/footer here) */
-
 .admin-dashboard {
     max-width: 1200px;
     margin: 40px auto;
@@ -8,7 +6,7 @@
     padding: 0 20px;
 }
 
-/* sidebar */
+
 .admin-dashboard .dashboard-sidebar {
     width: 260px;
     background: #fff;
@@ -99,15 +97,4 @@
 
 .admin-link:hover {
     text-decoration: underline;
-}
-
-/* responsive */
-@media (max-width: 900px) {
-    .admin-dashboard {
-        flex-direction: column;
-    }
-
-    .admin-dashboard .dashboard-sidebar {
-        width: 100%;
-    }
 }
