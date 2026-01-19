@@ -9,31 +9,11 @@
 
 </head>
 <body>
-    <section class="first-section">
-        <div class="a-container">
-        <div class="first-container">
-        Hi buddy! 
-        </div>
+    
 
-        <div class="second-container">
-        <a href="">Sell</a>
-    </div>
-    </div>
+      
 
-    <div class="list-container">
-        
-       <div>
-        <a href="userdashboard.php">My TradeBay</a>
-       </div>
-       <div>
-        <a href="">
-            <img src="../Images/second.png" alt="">
-        </a>
-       </div>
-    </div>
-    </section>
-
-    <hr>
+   
 
     <section class="second-section">
         <div class="logo-container">
@@ -52,7 +32,7 @@
         
     </form>
     </section>
-
+<hr>
    <section class="selling-section">
     <div class="selling">
         Selling
