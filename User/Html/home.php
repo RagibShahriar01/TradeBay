@@ -1,6 +1,10 @@
 <?php
 session_start();
 include "../db/config.php";
+$isLoggedIn = isset($_SESSION["user_id"]) && (int)$_SESSION["user_id"] > 0;
+$isLoggedIn = isset($_SESSION["user_id"]) && (int)$_SESSION["user_id"] > 0;
+$userName = $_SESSION["user_name"] ?? "";
+
 
 // all approved products
 $products = $conn->query("
@@ -24,7 +28,16 @@ $products = $conn->query("
     <section class="first-section">
         <div class="a-container">
         <div class="first-container">
-       Hi buddy! <a href="login.php">Login</a> or <a href="register.php">Register</a>
+      <?php if(!$isLoggedIn){ ?>
+       Hello, buddy! <a href="login.php">Login</a> or <a href="register.php">Register</a>
+      <?php 
+      } 
+      else { 
+        ?>Welcome,<?php echo htmlspecialchars($userName); ?> <?php 
+        } 
+      ?>
+
+
         </div>
 
         <div class="second-container">
@@ -43,11 +56,25 @@ $products = $conn->query("
         </select>
        </div>
        
-       <div class="dropdown">
-        <a href="userdashboard.php">My TradeBay</a>
-         <a href="../Php/logout.php">Logout</a>
+       
+      <?php if($isLoggedIn){ ?>
+          <div class="dropdown">
+            <a href="userdashboard.php">My TradeBay</a>
+            <a href="../Php/logout.php">Logout</a>
+          </div>
+        <?php 
+        } 
+        else { 
+          ?>
+          <div class="dropdown">
+            <a href="login.php">My TradeBay</a>
+        </div>
+        <?php 
+        } ?>
 
-       </div>
+
+
+
        <div>
          <a href=""><img src="../Images/first.png" alt=""></a>
          
