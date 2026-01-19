@@ -449,7 +449,7 @@ body {
     margin-bottom: 10px;
 }
 
-.footer-section a {
+.footer-section  {
     color: gray;
     font-size: 15px;
     text-decoration: none;
@@ -457,9 +457,6 @@ body {
     margin-bottom: 5px;
 }
 
-.footer-section a:hover {
-    text-decoration: underline;
-}
 
 .links-row {
     display: flex;

@@ -79,6 +79,10 @@ body {
     padding: 15px 20px;
 }
 
+.logo-container{
+    margin-top: 20px;
+}
+
 .logo-container a {
     font-size: 30px;
     font-weight: bold;

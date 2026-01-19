@@ -31,6 +31,20 @@ $itemRows = $items->get_result();
 
 <!-- ✅ keep your header same -->
 
+
+   <div class="logo-container">
+            <a href="">
+            <span style="color: blue;">T</span>
+            <span style="color: green;">r</span>
+            <span style="color: red;">a</span>
+            <span style="color: blue;">d</span>
+            <span style="color: red;">e</span>
+            <span style="color: green;">B</span>
+            <span style="color: blue;">a</span>
+            <span style="color: orange;">y</span>
+            </a>
+      </div>
+
 <h1 class="checkout-title">Confirmation</h1>
 
 <section class="order-confirmation">

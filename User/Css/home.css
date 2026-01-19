@@ -364,10 +364,17 @@ body {
     margin-bottom: 12px;
 }
 
+.socials a {
+    display: inline-block;
+    cursor: pointer;
+}
+
 .socials img {
     width: 30px;
     height: 30px;
     object-fit: contain;
+    cursor: pointer;
+    pointer-events: auto;
 }
 
 /* small CTAs */

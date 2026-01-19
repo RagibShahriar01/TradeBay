@@ -16,29 +16,16 @@
         </div>
 
         <div class="second-container">
-            
-            <a href="">Help & Contact</a>
-        </div>
-        <div class="second-container">
         <a href="">Sell</a>
     </div>
     </div>
 
     <div class="list-container">
-        <div>
-        <select class="dropdown">
-            <option>Watchlist</option>
-        </select>
+        
+       <div>
+        <a href="userdashboard.php">My TradeBay</a>
        </div>
        <div>
-        <select class="dropdown">
-            <option>My TradeBay</option>
-        </select>
-       </div>
-       <div>
-         <a href="">
-            <img src="../Images/first.png" alt="">
-        </a>
         <a href="">
             <img src="../Images/second.png" alt="">
         </a>
@@ -62,19 +49,7 @@
             </a>
         </div>
          <form class="search-bar">
-        <div class="search-input">
-            <span class="search-icon">🔍</span>
-            <input type="text" placeholder="Search for anything">
-        </div>
-
-        <select class="search-category">
-            <option>All Categories</option>
-            <option>Electronics</option>
-            <option>Fashion</option>
-            <option>Books</option>
-        </select>
-
-        <button type="submit" class="search-btn">Search</button>
+        
     </form>
     </section>
 
@@ -83,11 +58,6 @@
         Selling
     </div>
     <div class="category-bar">
-        <a href="">Business selling</a>
-        <a href="">Tips for listing</a>
-        <a href="">Promotions</a>
-        <a href="">FAQ</a>
-        <a href="">My TradeBay</a>
 
         <a href="listitem.php" style="text-decoration:none;">
         <button type="button" class="search-btn">List an item</button>
@@ -156,7 +126,6 @@
             track your sales, and build your brand.
         </p>
 
-        <button class="learn-btn">Learn more</button>
     </div>
 
     <div class="business-right">
@@ -239,31 +208,20 @@
 <section class="footer">
   <div class="footer-section">
     <p>Selling on TradeBay</p>
-    <a href="">Seller Center</a><br>
-    <a href="">Sell for charity</a><br>
-    <a href="">Business tools</a>
+    Seller Center<br>
+    Sell for charity<br>
+    Business tools
   </div>
   <div class="footer-section">
     <p>Support</p>
-    <a href="">Customer Service</a><br>
-    <a href="">Seller Policies</a><br>
-    <a href="">Community</a>
+    Customer Service<br>
+    Seller Policies<br>
+    Community
 </div>
 
 </section>
 
 <footer>
-     <div class="links-row">
-    <a href="">About TradeBay</a>
-    <a href="">Announcements</a>
-    <a href="">Community</a>
-    <a href="">Security Center</a>
-    <a href="">Seller Center</a>
-    <a href="">Policies</a>
-    <a href="">Affiliates</a>
-    <a href="">Help & Contact</a>
-    <a href="">Site Map</a>
-  </div>
   
   <div class="footer-bottom">
     <div class="footer-inner">

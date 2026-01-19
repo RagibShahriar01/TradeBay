@@ -27,21 +27,13 @@ $products = $conn->query("
        Hi buddy! <a href="login.php">Login</a> or <a href="register.php">Register</a>
         </div>
 
-        <div class="second-container">
-            
-            <a href="">Help & Contact</a>
-        </div>
+        
         <div class="second-container">
         <a href="sell.php">Sell</a>
     </div>
     </div>
 
     <div class="list-container">
-        <div>
-        <select class="dropdown">
-            <option>Watchlist</option>
-        </select>
-       </div>
        
        <div class="dropdown">
         <a href="userdashboard.php">My TradeBay</a>
@@ -49,7 +41,6 @@ $products = $conn->query("
 
        </div>
        <div>
-         <a href=""><img src="../Images/first.png" alt=""></a>
          
         <a href="cart.php"><img src="../Images/second.png" alt="Cart"></a>
 
@@ -85,13 +76,6 @@ $products = $conn->query("
     <input type="text" id="searchInput" placeholder="Search products by name...">
   </div>
 
-  <select class="search-category">
-    <option>All Categories</option>
-    <option>Electronics</option>
-    <option>Fashion</option>
-    <option>Books</option>
-  </select>
-
   
 </form>
 
@@ -105,11 +89,11 @@ $products = $conn->query("
 
     <hr>
     <div class="category-bar">
-      <a href="category.php?id=8">Audio</a>
-      <a href="category.php?id=9">Battery & Power</a>
-      <a href="category.php?id=10">Desktop Accessories</a>
-      <a href="category.php?id=12">Gadgets</a>
-      <a href="category.php?id=11">Watches</a>
+      <a href="category.php?id=1">Audio</a>
+      <a href="category.php?id=2">Battery & Power</a>
+      <a href="category.php?id=3">Desktop Accessories</a>
+      <a href="category.php?id=4">Gadgets</a>
+      <a href="category.php?id=5">Watches</a>
     </div>
 
 
@@ -148,10 +132,10 @@ $products = $conn->query("
     <div class="footer-col">
       <h4>TradeBay LTD.</h4>
       <ul class="footer-list">
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms Of Use</a></li>
-        <li><a href="#">Limited Warranty</a></li>
+        <li>About Us</li>
+        <li>Privacy Policy</li>
+        <li>Terms Of Use</li>
+        <li>Limited Warranty</li>
       </ul>
     </div>
 
@@ -159,7 +143,7 @@ $products = $conn->query("
       <h4>CUSTOMER CARE</h4>
       <ul class="footer-list">
         <li><a href="#">Contact Us</a></li>
-        <li><a href="#">Purchase Process</a></li>
+  
         <li><a href="tel:+8801709995757">+8801709995757</a></li>
       </ul>
     </div>
@@ -167,11 +151,11 @@ $products = $conn->query("
     <div class="footer-col">
       <h4>CUSTOMER INFORMATION</h4>
       <ul class="footer-list">
-        <li><a href="#">Returns & Exchanges</a></li>
-        <li><a href="#">Shipping Information</a></li>
-        <li><a href="#">Offers & Promotions</a></li>
-        <li><a href="#">Size Charts</a></li>
-        <li><a href="#">Gift Voucher</a></li>
+        <li>Returns & Exchanges</li>
+        <li>Shipping Information</li>
+        <li>Offers & Promotions</li>
+        <li>Size Charts</li>
+        <li>Gift Voucher</li>
       </ul>
     </div>
 
@@ -179,10 +163,10 @@ $products = $conn->query("
       <h4>FOLLOW US!</h4>
 
       <div class="socials">
-        <a href="#"><img src="../Images/instagram.png" alt="Instagram"></a>
-        <a href="#"><img src="../Images/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="../Images/twitter.png" alt="Twitter"></a>
-        <a href="#"><img src="../Images/youtube.png" alt="YouTube"></a>
+        <a href="https://www.instagram.com/"><img src="../Images/instagram.png" alt="Instagram"></a>
+        <a href="https://www.facebook.com/"><img src="../Images/facebook.png" alt="Facebook"></a>
+        <a href="https://twitter.com/"><img src="../Images/twitter.png" alt="Twitter"></a>
+        <a href="https://www.youtube.com/"><img src="../Images/youtube.png" alt="YouTube"></a>
       </div>
 
       <div class="small-ctas">

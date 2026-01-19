@@ -70,7 +70,7 @@ unset($_SESSION["tb_list_msg"]);
     <p class="note-text">
       Your listing will be <b>pending</b> until an admin approves it.
     </p>
-    <a href="saleshistory.php" class="sales-link">View Sales History</a>
+   
   </div>
 </section>
 

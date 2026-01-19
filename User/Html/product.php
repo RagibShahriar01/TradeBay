@@ -202,10 +202,10 @@ $isLogged = isset($_SESSION["user_id"]);
       <h4>FOLLOW US!</h4>
 
       <div class="socials">
-        <a href="#"><img src="../Images/instagram.png" alt="Instagram"></a>
-        <a href="#"><img src="../Images/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="../Images/twitter.png" alt="Twitter"></a>
-        <a href="#"><img src="../Images/youtube.png" alt="YouTube"></a>
+        <a href="https://www.instagram.com/"><img src="../Images/instagram.png" alt="Instagram"></a>
+        <a href="https://www.facebook.com/"><img src="../Images/facebook.png" alt="Facebook"></a>
+        <a href="https://twitter.com/"><img src="../Images/twitter.png" alt="Twitter"></a>
+        <a href="https://www.youtube.com/"><img src="../Images/youtube.png" alt="YouTube"></a>
       </div>
 
       <div class="small-ctas">

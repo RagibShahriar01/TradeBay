@@ -38,9 +38,6 @@ unset($_SESSION["tb_list_msg"]);
             Hi buddy!
         </div>
 
-        <div class="second-container">
-            <a href="">Help & Contact</a>
-        </div>
 
         <div class="second-container">
             <a href="sell.php">Sell</a>
@@ -48,18 +45,12 @@ unset($_SESSION["tb_list_msg"]);
     </div>
 
     <div class="list-container">
+        
         <div>
-            <select class="dropdown">
-                <option>Watchlist</option>
-            </select>
+           <a href="userdashboard.php">My TradeBay</a>
         </div>
         <div>
-            <select class="dropdown">
-                <option>My TradeBay</option>
-            </select>
-        </div>
-        <div>
-            <a href=""><img src="../Images/first.png" alt="Notifications"></a>
+            
             <a href=""><img src="../Images/second.png" alt="Cart"></a>
         </div>
     </div>
@@ -82,34 +73,16 @@ unset($_SESSION["tb_list_msg"]);
     </div>
 
     <form class="search-bar">
-        <div class="search-input">
-            <span class="search-icon">🔍</span>
-            <input type="text" placeholder="Search for anything">
-        </div>
+        
 
-        <select class="search-category">
-            <option>All Categories</option>
-            <option>Electronics</option>
-            <option>Fashion</option>
-            <option>Books</option>
-        </select>
 
-        <button type="submit" class="search-btn">Search</button>
+        
     </form>
 </section>
 
 <hr>
 
-<div class="category-bar">
-    <a href="">Electronic</a>
-    <a href="">Motors</a>
-    <a href="">Fashion</a>
-    <a href="">Collectibles & Art</a>
-    <a href="">Sports</a>
-    <a href="">Healthy & Beauty</a>
-    <a href="">Industrial equipment</a>
-    <a href="">Home & Garden</a>
-</div>
+
 
 <div class="dashboard">
 
@@ -295,10 +268,10 @@ $orders = $conn->query("
         <div class="footer-col">
             <h4>TradeBay LTD.</h4>
             <ul class="footer-list">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms Of Use</a></li>
-                <li><a href="#">Limited Warranty</a></li>
+                <li>About Us</li>
+                <li>Privacy Policy</li>
+                <li>Terms Of Use</li>
+                <li>Limited Warranty</li>
             </ul>
         </div>
 
@@ -306,7 +279,7 @@ $orders = $conn->query("
             <h4>CUSTOMER CARE</h4>
             <ul class="footer-list">
                 <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Purchase Process</a></li>
+                
                 <li><a href="tel:+8801709995757">+8801709995757</a></li>
             </ul>
         </div>
@@ -314,22 +287,22 @@ $orders = $conn->query("
         <div class="footer-col">
             <h4>CUSTOMER INFORMATION</h4>
             <ul class="footer-list">
-                <li><a href="#">Returns & Exchanges</a></li>
-                <li><a href="#">Shipping Information</a></li>
-                <li><a href="#">Offers & Promotions</a></li>
-                <li><a href="#">Size Charts</a></li>
-                <li><a href="#">Gift Voucher</a></li>
+                <li>Returns & Exchanges</li>
+                <li>Shipping Information</li>
+                <li>Offers & Promotions</li>
+                <li>Size Charts</li>
+                <li>Gift Voucher</li>
             </ul>
         </div>
 
         <div class="footer-col">
             <h4>FOLLOW US!</h4>
             <div class="socials">
-                <a href="#"><img src="../Images/instagram.png" alt="Instagram"></a>
-                <a href="#"><img src="../Images/facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="../Images/twitter.png" alt="Twitter"></a>
-                <a href="#"><img src="../Images/youtube.png" alt="YouTube"></a>
-            </div>
+        <a href="https://www.instagram.com/"><img src="../Images/instagram.png" alt="Instagram"></a>
+        <a href="https://www.facebook.com/"><img src="../Images/facebook.png" alt="Facebook"></a>
+        <a href="https://twitter.com/"><img src="../Images/twitter.png" alt="Twitter"></a>
+        <a href="https://www.youtube.com/"><img src="../Images/youtube.png" alt="YouTube"></a>
+      </div>
             <div class="small-ctas">
                 <p class="small-cta">SIGN UP FOR SMS</p>
                 <p class="small-cta">FIND OUR SHOP</p>
