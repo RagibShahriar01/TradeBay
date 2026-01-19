@@ -49,10 +49,9 @@ unset($_SESSION["tb_list_msg"]);
       <label><b>Product condition</b></label>
       <select name="item_condition" required>
         <option>New</option>
-        <option>Never worn</option>
+        <option>Never Used</option>
         <option>Gently used</option>
         <option>Used</option>
-        <option>Very worn</option>
       </select>
 
       <label><b>Location</b></label>
