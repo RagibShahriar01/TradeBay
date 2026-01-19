@@ -33,7 +33,7 @@ $itemRows = $items->get_result();
 
 
    <div class="logo-container">
-            <a href="">
+            <a href="http://localhost/TradeBay/User/Html/home.php">
             <span style="color: blue;">T</span>
             <span style="color: green;">r</span>
             <span style="color: red;">a</span>
