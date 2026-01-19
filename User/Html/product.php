@@ -38,30 +38,14 @@ $isLogged = isset($_SESSION["user_id"]);
 <!-- ================= HEADER (same structure like your home.php) ================= -->
 
 <section class="first-section">
-  <div class="a-container">
-    <div class="first-container">
-      <?php if(!$isLogged){ ?>
-        Hi buddy! <a href="login.php">Login</a> or <a href="register.php">Register</a>
-      <?php } else { ?>
-        Hi buddy!
-      <?php } ?>
-    </div>
+  
 
-    <div class="second-container">
-      <a href="">Help & Contact</a>
-    </div>
 
     <div class="second-container">
       <a href="sell.php">Sell</a>
     </div>
   </div>
 
-  <div class="list-container">
-    <div>
-      <select class="dropdown">
-        <option>Watchlist</option>
-      </select>
-    </div>
 
     <div class="dropdown">
       <?php if($isLogged){ ?>
@@ -73,8 +57,7 @@ $isLogged = isset($_SESSION["user_id"]);
     </div>
 
     <div>
-      <a href=""><img src="../Images/first.png" alt=""></a>
-      <a href=""><img src="../Images/second.png" alt=""></a>
+       <a href="cart.php"><img src="../Images/second.png" alt="Cart"></a>
     </div>
   </div>
 </section>
@@ -93,37 +76,13 @@ $isLogged = isset($_SESSION["user_id"]);
       <span style="color: blue;">a</span>
       <span style="color: orange;">y</span>
     </a>
-  </div>
-
-  <form class="search-bar">
-    <div class="search-input">
-      <span class="search-icon">🔍</span>
-      <input type="text" placeholder="Search for anything">
-    </div>
-
-    <select class="search-category">
-      <option>All Categories</option>
-      <option>Electronics</option>
-      <option>Fashion</option>
-      <option>Books</option>
-    </select>
-
-    <button type="submit" class="search-btn">Search</button>
-  </form>
+  </div> 
+    
 </section>
 
-<hr>
 
-<div class="category-bar">
-  <a href="">Electronic</a>
-  <a href="">Motors</a>
-  <a href="">Fashion</a>
-  <a href="">Collectibles & Art</a>
-  <a href="">Sports</a>
-  <a href="">Healthy & Beauty</a>
-  <a href="">Industrial equipment</a>
-  <a href="">Home & Garden</a>
-</div>
+
+
 
 <!-- ================= PRODUCT CONTENT ================= -->
 

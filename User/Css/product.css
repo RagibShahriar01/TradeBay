@@ -103,7 +103,7 @@
 }
 
 .buy-now-btn {
-    background: #111;
+    background: gray;
 }
 
 .cart-msg {
@@ -114,26 +114,7 @@
     /* was 14px */
 }
 
-/* responsive */
-@media (max-width: 950px) {
-    .product-page {
-        flex-direction: column;
-    }
 
-    .product-left,
-    .product-right {
-        width: 100%;
-    }
-
-    /* 30% smaller than 320px -> 224px */
-    .product-left {
-        height: 224px;
-    }
-
-    .product-img {
-        height: 100%;
-    }
-}
 .socials {
     display: flex;
     gap: 14px;
