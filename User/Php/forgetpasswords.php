@@ -2,7 +2,7 @@
 session_start();
 
 include "../db/config.php";
-include "mailer.php"; // ✅ PHPMailer helper (User/Php/mailer.php)
+include "mailer.php"; // 
 
 function back(){
   header("Location: ../html/forgetpassword.php");
@@ -42,7 +42,7 @@ if(isset($_POST["send_otp"])){
     $conn->query("INSERT INTO otp_requests(email,otp_code,purpose,expires_at)
                   VALUES('$email','$otp','user_reset','$expires')");
 
-    // ✅ Send OTP using PHPMailer SMTP
+    //  Send OTP using PHPMailer SMTP
     $body = "
       <h3>TradeBay Password Reset</h3>
       <p>Your 4-digit OTP is: <b>$otp</b></p>
